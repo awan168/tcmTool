@@ -1,0 +1,41 @@
+[main]子宮肌瘤
+
+[symptom]容易焦慮
+[symptom]潮紅
+[symptom]貧血傾向
+[symptom]頭痛
+[symptom]臉色差
+[symptom]心悸
+[symptom]胸口壓痛拒按
+[symptom]叩擊胃部有水聲
+[symptom]下腹部壓痛拒按
+[symptom]頻尿
+[symptom]便祕
+[symptom]分泌物多
+[symptom]經痛
+[symptom]下半身虛冷
+[symptom]容易疲倦
+
+[formula]桃核承氣湯
+[formula]大黃牡丹皮湯
+[formula]桂枝茯苓丸
+[formula]折衝飲
+[formula]加味逍遙散
+[formula]溫經湯
+[formula]當歸芍藥散
+[formula]當歸建中湯
+
+
+[table]桃核承氣湯       1 3 0 2 0 0 0 0 3 0 2 0 3 3 0
+[table]大黃牡丹皮湯	0 0 0 0 0 0 0 0 3 1 3 0 3 0 0
+[table]桂枝茯苓丸	1 3 0 2 0 2 0 0 3 0 3 0 2 3 0
+[table]折衝飲		0 0 0 0 0 0 0 0 1 0 0 0 3 2 0
+[table]加味逍遙散	3 3 0 2 0 2 2 3 0 0 1 0 2 2 3
+[table]溫經湯		0 0 2 0 1 0 0 0 0 0 0 2 2 3 3
+[table]當歸芍藥散	0 0 3 0 0 2 0 3 2 2 0 0 2 3 3
+[table]當歸建中湯 	0 0 2 0 2 0 0 0 3 2 0 2 2 2 3
+
+
+
+
+
