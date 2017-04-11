@@ -335,14 +335,29 @@ TABS:          tabs-4 :
 --> 
  
 <div id="tabs-4"> 
- 
-       <div id="allqc"></div> 
-       <script> 
-        var all_qc = localStorage.getItem("bar_allqc"); 
-        document.getElementById("allqc").innerHTML = all_qc; 
-       </script> 
-        
-        
+   <div> 
+      <span><button onclick="putNote('note/formula_120.html')">桃核承氣湯</button></span>
+       <span><button onclick="putNote('note/formula_193.html')">大黃牡丹皮湯</button></span>
+       <span><button onclick="putNote('note/formula_118.html')">桂枝茯苓丸</button></span>
+       <span><button onclick="putNote('note/formula_83.html')">折衝飲</button></span>
+       <span><button onclick="putNote('note/formula_174.html')">加味逍遙散</button></span>
+       <span><button onclick="putNote('note/formula_89.html')">溫經湯</button></span>
+       <span><button onclick="putNote('note/formula_90.html')">當歸芍藥散</button></span>
+       <span><button onclick="putNote('note/formula_19.html')">當歸建中湯</button></span>
+  
+  </div> 
+
+  <div id="noteNow"></div> 
+
+  <script>        
+          
+           function putNote(index)
+           {
+                    var content = index;
+                    document.getElementById("noteNow").innerHTML = '<object width="900" height="900" type="text/html" data='+content+'></object>';
+           }
+  </script>        
+
 </div> 
 
 </body> 

@@ -49,16 +49,21 @@ listNow = fileNow.readlines()
 fileNow.close()
 
 formulaQ = []
+noteQ = []
 
 for item in listNow:
     regexp0 = r"\[formula\](\S+)"
     regexp1 = r"\[main\](\S+)"
+    regexp2 = r"\[note\](\S+)\s+(\S+)"
     if (re.findall(regexp0, item.strip())):
         matchp0 = re.search(regexp0, item)
         formulaQ.append(matchp0.group(1))
     if (re.findall(regexp1, item.strip())):
         matchp1 = re.search(regexp1, item)
         mainSym = matchp1.group(1)
+    if (re.findall(regexp2, item.strip())):
+        matchp2 = re.search(regexp2, item)
+        noteQ.append(matchp2.group(2))
 
 #=== Output File handling area ...
 
@@ -319,14 +324,26 @@ TABS:          tabs-4 : \n\
 --> \n\
  \n\
 <div id=\"tabs-4\"> \n\
- \n\
-       <div id=\"allqc\"></div> \n\
-       <script> \n\
-        var all_qc = localStorage.getItem(\"bar_allqc\"); \n\
-        document.getElementById(\"allqc\").innerHTML = all_qc; \n\
-       </script> \n\
-        \n\
-        \n\
+   <div> \n")
+
+#      <span><button onclick="putNote('note/formula_120.html')">桃核承氣湯</button></span>
+for i, item in enumerate(formulaQ):
+    new_file.write("      <span><button onclick=\"putNote(\'note/formula_"+noteQ[i]+".html\')\">"+formulaQ[i]+"</button></span>\n ")
+
+new_file.write(" \n\
+  </div> \n\
+\n\
+  <div id=\"noteNow\"></div> \n\
+\n\
+  <script>        \n\
+          \n\
+           function putNote(index)\n\
+           {\n\
+                    var content = index;\n\
+                    document.getElementById(\"noteNow\").innerHTML = \'<object width=\"900\" height=\"900\" type=\"text/html\" data=\'+content+\'></object>\';\n\
+           }\n\
+  </script>        \n\
+\n\
 </div> \n")
 
 
