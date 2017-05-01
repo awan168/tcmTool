@@ -1,0 +1,427 @@
+
+<!doctype html> 
+<html> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>上醫堂經矩陣製作程式</title> 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"> 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script src="tcmSymBase.js"></script> 
+  <script> 
+  $( function() { 
+    $( "#tabs" ).tabs(); 
+  } ); 
+  </script> 
+</head> 
+<body> 
+         <!--<img src="tcmTool_title.gif" height="218" width="800">-->  
+         <!--<p>數位人生哲學起課程式</p>--> 
+  
+<p id="display"></p> 
+
+<p id="display2"></p> 
+
+<p id="display3"></p> 
+
+<p id="display4"></p> 
+
+<p id="display5"></p> 
+
+<div id="tabs"> 
+  <ul> 
+    <li><a href="#tabs-1">症狀</a></li> 
+    <li><a href="#tabs-2">方劑</a></li> 
+    <li><a href="#tabs-3">note</a></li> 
+  </ul> 
+
+
+
+<!--  
+=========================================================================== 
+TABS:          tabs-1 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-1"> 
+   <div> 
+<table border="1" cellpadding="1" cellspacing="1" style="width: 1200px"></td></tr><tr><td>1   心</td><td>
+  <span><button onclick="putItem('[symptom] 心悸')">心悸</button></span>
+   <span><button onclick="putItem('[symptom] 心浮氣躁')">心浮氣躁</button></span>
+   <span><button onclick="putItem('[symptom] 出血')">出血</button></span>
+ </td></tr><tr><td>2   脾</td><td>
+  <span><button onclick="putItem('[symptom] 水腫')">水腫</button></span>
+   <span><button onclick="putItem('[symptom] 肚子痛')">肚子痛</button></span>
+   <span><button onclick="putItem('[symptom] 便祕')">便祕</button></span>
+   <span><button onclick="putItem('[symptom] 胃灼熱')">胃灼熱</button></span>
+   <span><button onclick="putItem('[symptom] 食慾不振')">食慾不振</button></span>
+   <span><button onclick="putItem('[symptom] 容易放屁')">容易放屁</button></span>
+   <span><button onclick="putItem('[symptom] 消化不良')">消化不良</button></span>
+   <span><button onclick="putItem('[symptom] 飯後嗜睡')">飯後嗜睡</button></span>
+   <span><button onclick="putItem('[symptom] 飲食過度')">飲食過度</button></span>
+   <span><button onclick="putItem('[symptom] 腹脹')">腹脹</button></span>
+   <span><button onclick="putItem('[symptom] 腹嗚')">腹嗚</button></span>
+   <span><button onclick="putItem('[symptom] 腹瀉')">腹瀉</button></span>
+   <span><button onclick="putItem('[symptom] 嘔心想吐')">嘔心想吐</button></span>
+ </td></tr><tr><td>3   肺</td><td>
+  <span><button onclick="putItem('[symptom] 咳嗽')">咳嗽</button></span>
+   <span><button onclick="putItem('[symptom] 聲音沙啞')">聲音沙啞</button></span>
+   <span><button onclick="putItem('[symptom] 一直有痰')">一直有痰</button></span>
+   <span><button onclick="putItem('[symptom] 無痰')">無痰</button></span>
+   <span><button onclick="putItem('[symptom] 多痰')">多痰</button></span>
+   <span><button onclick="putItem('[symptom] 稀痰')">稀痰</button></span>
+   <span><button onclick="putItem('[symptom] 狂咳')">狂咳</button></span>
+   <span><button onclick="putItem('[symptom] 咳到面紅')">咳到面紅</button></span>
+   <span><button onclick="putItem('[symptom] 濃痰易咳出')">濃痰易咳出</button></span>
+   <span><button onclick="putItem('[symptom] 呼吸困難')">呼吸困難</button></span>
+   <span><button onclick="putItem('[symptom] 清鼻涕')">清鼻涕</button></span>
+   <span><button onclick="putItem('[symptom] 不易咳出的黏痰')">不易咳出的黏痰</button></span>
+   <span><button onclick="putItem('[symptom] 喉嚨癢')">喉嚨癢</button></span>
+ </td></tr><tr><td>4   腎</td><td>
+  <span><button onclick="putItem('[symptom] 手腳冰冷')">手腳冰冷</button></span>
+   <span><button onclick="putItem('[symptom] 手腳發熱')">手腳發熱</button></span>
+   <span><button onclick="putItem('[symptom] 血尿')">血尿</button></span>
+   <span><button onclick="putItem('[symptom] 尿失禁')">尿失禁</button></span>
+   <span><button onclick="putItem('[symptom] 排尿不順')">排尿不順</button></span>
+   <span><button onclick="putItem('[symptom] 腳浮腫')">腳浮腫</button></span>
+   <span><button onclick="putItem('[symptom] 頻尿')">頻尿</button></span>
+   <span><button onclick="putItem('[symptom] 夜尿')">夜尿</button></span>
+ </td></tr><tr><td>5   肝</td><td>
+  <span><button onclick="putItem('[symptom] 大量掉髮')">大量掉髮</button></span>
+   <span><button onclick="putItem('[symptom] 手腳抽筋')">手腳抽筋</button></span>
+   <span><button onclick="putItem('[symptom] 口苦')">口苦</button></span>
+ </td></tr><tr><td>6   婦科</td><td>
+</td></tr><tr><td>7   神志</td><td>
+  <span><button onclick="putItem('[symptom] 夜啼')">夜啼</button></span>
+   <span><button onclick="putItem('[symptom] 容易亢奮')">容易亢奮</button></span>
+   <span><button onclick="putItem('[symptom] 容易焦躁')">容易焦躁</button></span>
+   <span><button onclick="putItem('[symptom] 精力衰退')">精力衰退</button></span>
+   <span><button onclick="putItem('[symptom] 健忘')">健忘</button></span>
+   <span><button onclick="putItem('[symptom] 失眠')">失眠</button></span>
+   <span><button onclick="putItem('[symptom] 不易入睡')">不易入睡</button></span>
+   <span><button onclick="putItem('[symptom] 睡眠品質差')">睡眠品質差</button></span>
+ </td></tr><tr><td>8   傷科</td><td>
+  <span><button onclick="putItem('[symptom] 肩膀痠痛')">肩膀痠痛</button></span>
+   <span><button onclick="putItem('[symptom] 背痛')">背痛</button></span>
+   <span><button onclick="putItem('[symptom] 胸口悶')">胸口悶</button></span>
+   <span><button onclick="putItem('[symptom] 胸痛')">胸痛</button></span>
+   <span><button onclick="putItem('[symptom] 胸腹動悸')">胸腹動悸</button></span>
+   <span><button onclick="putItem('[symptom] 側腹疼痛')">側腹疼痛</button></span>
+   <span><button onclick="putItem('[symptom] 腰酸腰痛')">腰酸腰痛</button></span>
+   <span><button onclick="putItem('[symptom] 膝蓋疼痛')">膝蓋疼痛</button></span>
+   <span><button onclick="putItem('[symptom] 關節疼痛')">關節疼痛</button></span>
+ </td></tr><tr><td>9   皮膚</td><td>
+  <span><button onclick="putItem('[symptom] 皮膚容易化膿')">皮膚容易化膿</button></span>
+   <span><button onclick="putItem('[symptom] 皮膚粗糙')">皮膚粗糙</button></span>
+   <span><button onclick="putItem('[symptom] 皮膚癢')">皮膚癢</button></span>
+   <span><button onclick="putItem('[symptom] 蕁麻疹')">蕁麻疹</button></span>
+ </td></tr><tr><td>10   五官</td><td>
+  <span><button onclick="putItem('[symptom] 頭重')">頭重</button></span>
+   <span><button onclick="putItem('[symptom] 頭痛')">頭痛</button></span>
+   <span><button onclick="putItem('[symptom] 牙痛')">牙痛</button></span>
+   <span><button onclick="putItem('[symptom] 口苦')">口苦</button></span>
+   <span><button onclick="putItem('[symptom] 口臭')">口臭</button></span>
+   <span><button onclick="putItem('[symptom] 口腔發炎')">口腔發炎</button></span>
+   <span><button onclick="putItem('[symptom] 口乾')">口乾</button></span>
+   <span><button onclick="putItem('[symptom] 口黏')">口黏</button></span>
+   <span><button onclick="putItem('[symptom] 打鼾')">打鼾</button></span>
+   <span><button onclick="putItem('[symptom] 耳嗚')">耳嗚</button></span>
+   <span><button onclick="putItem('[symptom] 眼睛充血')">眼睛充血</button></span>
+   <span><button onclick="putItem('[symptom] 眼睛疲勞')">眼睛疲勞</button></span>
+   <span><button onclick="putItem('[symptom] 眼睛乾澀')">眼睛乾澀</button></span>
+   <span><button onclick="putItem('[symptom] 唾液分泌過多')">唾液分泌過多</button></span>
+   <span><button onclick="putItem('[symptom] 喉嚨痛')">喉嚨痛</button></span>
+   <span><button onclick="putItem('[symptom] 喉嚨異物感')">喉嚨異物感</button></span>
+   <span><button onclick="putItem('[symptom] 潮紅')">潮紅</button></span>
+ </td></tr><tr><td>11   其它</td><td>
+  <span><button onclick="putItem('[symptom] 全身倦怠')">全身倦怠</button></span>
+   <span><button onclick="putItem('[symptom] 容易疲累')">容易疲累</button></span>
+   <span><button onclick="putItem('[symptom] 早上起不來')">早上起不來</button></span>
+   <span><button onclick="putItem('[symptom] 冷氣症')">冷氣症</button></span>
+   <span><button onclick="putItem('[symptom] 夜間盜汗')">夜間盜汗</button></span>
+   <span><button onclick="putItem('[symptom] 無汗')">無汗</button></span>
+   <span><button onclick="putItem('[symptom] 自汗')">自汗</button></span>
+   <span><button onclick="putItem('[symptom] 寒顫')">寒顫</button></span>
+   <span><button onclick="putItem('[symptom] 狐臭')">狐臭</button></span>
+   <span><button onclick="putItem('[symptom] 肥胖')">肥胖</button></span>
+   <span><button onclick="putItem('[symptom] 容易口渴')">容易口渴</button></span>
+   <span><button onclick="putItem('[symptom] 眩暈')">眩暈</button></span>
+   <span><button onclick="putItem('[symptom] 宿醉')">宿醉</button></span>
+   <span><button onclick="putItem('[symptom] 發熱')">發熱</button></span>
+   <span><button onclick="putItem('[symptom] 惡熱')">惡熱</button></span>
+   <span><button onclick="putItem('[symptom] 輕微發燒')">輕微發燒</button></span>
+   <span><button onclick="putItem('[symptom] 瘦不下來')">瘦不下來</button></span>
+   <span><button onclick="putItem('[symptom] 體重一向過輕')">體重一向過輕</button></span>
+   <span><button onclick="putItem('[symptom] 體重近來減輕')">體重近來減輕</button></span>
+   <span><button onclick="putItem('[symptom] 疾病遷延不愈')">疾病遷延不愈</button></span>
+ </td></tr><tr><td>12   脈</td><td>
+  <span><button onclick="putItem('[symptom] 代脈')">代脈</button></span>
+   <span><button onclick="putItem('[symptom] 結脈')">結脈</button></span>
+   <span><button onclick="putItem('[symptom] 促脈')">促脈</button></span>
+   <span><button onclick="putItem('[symptom] 滑脈')">滑脈</button></span>
+   <span><button onclick="putItem('[symptom] 浮脈')">浮脈</button></span>
+   <span><button onclick="putItem('[symptom] 虛脈')">虛脈</button></span>
+ </td></tr><tr><td>13   舌</td><td>
+  <span><button onclick="putItem('[symptom] 舌苔白')">舌苔白</button></span>
+   <span><button onclick="putItem('[symptom] 舌苔黃')">舌苔黃</button></span>
+   <span><button onclick="putItem('[symptom] 無苔')">無苔</button></span>
+   <span><button onclick="putItem('[symptom] 舌質白淡')">舌質白淡</button></span>
+   <span><button onclick="putItem('[symptom] 舌質紅')">舌質紅</button></span>
+   <span><button onclick="putItem('[symptom] 舌質暗')">舌質暗</button></span>
+   <span><button onclick="putItem('[symptom] 舌有齒痕')">舌有齒痕</button></span>
+ </tr></table> 
+  </div> 
+
+
+  <script>        
+           var allText = "";
+           function putItem(textNow)
+           {
+                    allText += textNow; 
+                    allText += "<br>"; 
+                    document.getElementById("display").innerHTML = allText; 
+           }
+  </script>        
+
+</div> 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-2 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-2"> 
+   <div> 
+      <span><button onclick="putItem2('桂枝湯','1')">桂枝湯</button></span>
+       <span><button onclick="putItem2('麻黃湯','2')">麻黃湯</button></span>
+       <span><button onclick="putItem2('葛根湯','3')">葛根湯</button></span>
+       <span><button onclick="putItem2('半夏天麻白朮湯','4')">半夏天麻白朮湯</button></span>
+       <span><button onclick="putItem2('金沸草散','5')">金沸草散</button></span>
+       <span><button onclick="putItem2('苓桂術甘湯','6')">苓桂術甘湯</button></span>
+       <span><button onclick="putItem2('柴陷湯','7')">柴陷湯</button></span>
+       <span><button onclick="putItem2('清肺湯','8')">清肺湯</button></span>
+       <span><button onclick="putItem2('清肺飲','9')">清肺飲</button></span>
+       <span><button onclick="putItem2('滋陰降火湯','10')">滋陰降火湯</button></span>
+       <span><button onclick="putItem2('頓嗽湯','11')">頓嗽湯</button></span>
+       <span><button onclick="putItem2('寧嗽丸','12')">寧嗽丸</button></span>
+       <span><button onclick="putItem2('四逆湯','13')">四逆湯</button></span>
+       <span><button onclick="putItem2('四逆散','14')">四逆散</button></span>
+       <span><button onclick="putItem2('小建中湯','15')">小建中湯</button></span>
+       <span><button onclick="putItem2('真武湯','16')">真武湯</button></span>
+       <span><button onclick="putItem2('理中湯','17')">理中湯</button></span>
+       <span><button onclick="putItem2('當歸四逆湯','18')">當歸四逆湯</button></span>
+       <span><button onclick="putItem2('歸耆建中湯','19')">歸耆建中湯</button></span>
+       <span><button onclick="putItem2('厚朴溫中湯','20')">厚朴溫中湯</button></span>
+       <span><button onclick="putItem2('安中散','21')">安中散</button></span>
+       <span><button onclick="putItem2('五苓散','22')">五苓散</button></span>
+       <span><button onclick="putItem2('茵陳五苓散','23')">茵陳五苓散</button></span>
+       <span><button onclick="putItem2('茵陳蒿湯','24')">茵陳蒿湯</button></span>
+       <span><button onclick="putItem2('五淋散','25')">五淋散</button></span>
+       <span><button onclick="putItem2('越婢加術湯','26')">越婢加術湯</button></span>
+       <span><button onclick="putItem2('五皮飲','27')">五皮飲</button></span>
+       <span><button onclick="putItem2('八正散','28')">八正散</button></span>
+       <span><button onclick="putItem2('萆薢分清飲','29')">萆薢分清飲</button></span>
+       <span><button onclick="putItem2('豬苓湯','30')">豬苓湯</button></span>
+       <span><button onclick="putItem2('薏苡仁湯','31')">薏苡仁湯</button></span>
+       <span><button onclick="putItem2('導水茯苓湯','32')">導水茯苓湯</button></span>
+       <span><button onclick="putItem2('羌活勝濕湯','33')">羌活勝濕湯</button></span>
+       <span><button onclick="putItem2('當歸拈痛湯','34')">當歸拈痛湯</button></span>
+       <span><button onclick="putItem2('三妙散','35')">三妙散</button></span>
+       <span><button onclick="putItem2('香薷飲','36')">香薷飲</button></span>
+       <span><button onclick="putItem2('清暑益氣湯','37')">清暑益氣湯</button></span>
+       <span><button onclick="putItem2('炙甘草湯','38')">炙甘草湯</button></span>
+       <span><button onclick="putItem2('清燥救肺湯','39')">清燥救肺湯</button></span>
+       <span><button onclick="putItem2('麥門冬湯','40')">麥門冬湯</button></span>
+       <span><button onclick="putItem2('麻子仁丸','41')">麻子仁丸</button></span>
+       <span><button onclick="putItem2('潤腸湯','42')">潤腸湯</button></span>
+       <span><button onclick="putItem2('養陰清肺湯','43')">養陰清肺湯</button></span>
+       <span><button onclick="putItem2('增液湯','44')">增液湯</button></span>
+       <span><button onclick="putItem2('平胃散','45')">平胃散</button></span>
+       <span><button onclick="putItem2('胃苓湯','46')">胃苓湯</button></span>
+       <span><button onclick="putItem2('保和丸','47')">保和丸</button></span>
+       <span><button onclick="putItem2('木香檳榔丸','48')">木香檳榔丸</button></span>
+       <span><button onclick="putItem2('三子養親湯','49')">三子養親湯</button></span>
+       <span><button onclick="putItem2('三黃瀉心湯','50')">三黃瀉心湯</button></span>
+       <span><button onclick="putItem2('半夏瀉心湯','51')">半夏瀉心湯</button></span>
+       <span><button onclick="putItem2('甘露飲','52')">甘露飲</button></span>
+       <span><button onclick="putItem2('白虎湯','53')">白虎湯</button></span>
+       <span><button onclick="putItem2('白頭翁湯','54')">白頭翁湯</button></span>
+       <span><button onclick="putItem2('玉女煎','55')">玉女煎</button></span>
+       <span><button onclick="putItem2('竹葉石膏湯','56')">竹葉石膏湯</button></span>
+       <span><button onclick="putItem2('瀉白散','57')">瀉白散</button></span>
+       <span><button onclick="putItem2('清上防風湯','58')">清上防風湯</button></span>
+       <span><button onclick="putItem2('黃連上清丸','59')">黃連上清丸</button></span>
+       <span><button onclick="putItem2('黃連解毒湯','60')">黃連解毒湯</button></span>
+       <span><button onclick="putItem2('清心利膈湯','61')">清心利膈湯</button></span>
+       <span><button onclick="putItem2('清胃散','62')">清胃散</button></span>
+       <span><button onclick="putItem2('涼膈散','63')">涼膈散</button></span>
+       <span><button onclick="putItem2('普濟消毒飲','64')">普濟消毒飲</button></span>
+       <span><button onclick="putItem2('辛夷清肺湯','65')">辛夷清肺湯</button></span>
+       <span><button onclick="putItem2('蒼耳散','66')">蒼耳散</button></span>
+       <span><button onclick="putItem2('麻杏甘石湯','67')">麻杏甘石湯</button></span>
+       <span><button onclick="putItem2('乙字湯','68')">乙字湯</button></span>
+       <span><button onclick="putItem2('八味帶下方','69')">八味帶下方</button></span>
+       <span><button onclick="putItem2('十味敗毒湯','70')">十味敗毒湯</button></span>
+       <span><button onclick="putItem2('十六味流氣飲','71')">十六味流氣飲</button></span>
+       <span><button onclick="putItem2('五味消毒飲','72')">五味消毒飲</button></span>
+       <span><button onclick="putItem2('托裡消毒散','73')">托裡消毒散</button></span>
+       <span><button onclick="putItem2('散腫潰堅湯','74')">散腫潰堅湯</button></span>
+       <span><button onclick="putItem2('真人活命飲','75')">真人活命飲</button></span>
+       <span><button onclick="putItem2('荊防敗毒散','76')">荊防敗毒散</button></span>
+       <span><button onclick="putItem2('荊芥連翹湯','77')">荊芥連翹湯</button></span>
+       <span><button onclick="putItem2('排膿散','78')">排膿散</button></span>
+       <span><button onclick="putItem2('桂枝加龍骨牡蠣湯','79')">桂枝加龍骨牡蠣湯</button></span>
+       <span><button onclick="putItem2('金鎖固精丸','80')">金鎖固精丸</button></span>
+       <span><button onclick="putItem2('桑螵蛸散','81')">桑螵蛸散</button></span>
+       <span><button onclick="putItem2('女科柏子仁丸','82')">女科柏子仁丸</button></span>
+       <span><button onclick="putItem2('折衝飲','83')">折衝飲</button></span>
+       <span><button onclick="putItem2('芎歸膠艾湯','84')">芎歸膠艾湯</button></span>
+       <span><button onclick="putItem2('杞菊地黃丸','85')">杞菊地黃丸</button></span>
+       <span><button onclick="putItem2('滋腎明目湯','86')">滋腎明目湯</button></span>
+       <span><button onclick="putItem2('調經丸','87')">調經丸</button></span>
+       <span><button onclick="putItem2('洗肝明目湯','88')">洗肝明目湯</button></span>
+       <span><button onclick="putItem2('溫經湯','89')">溫經湯</button></span>
+       <span><button onclick="putItem2('當歸芍藥散','90')">當歸芍藥散</button></span>
+       <span><button onclick="putItem2('完帶湯','91')">完帶湯</button></span>
+       <span><button onclick="putItem2('愈帶丸','92')">愈帶丸</button></span>
+       <span><button onclick="putItem2('甘麥大棗湯','93')">甘麥大棗湯</button></span>
+       <span><button onclick="putItem2('抑肝散','94')">抑肝散</button></span>
+       <span><button onclick="putItem2('柴胡加龍骨牡蠣湯','95')">柴胡加龍骨牡蠣湯</button></span>
+       <span><button onclick="putItem2('酸棗仁湯','96')">酸棗仁湯</button></span>
+       <span><button onclick="putItem2('一貫煎','97')">一貫煎</button></span>
+       <span><button onclick="putItem2('半夏厚朴湯','98')">半夏厚朴湯</button></span>
+       <span><button onclick="putItem2('人參養榮湯','99')">人參養榮湯</button></span>
+       <span><button onclick="putItem2('旋覆代赭石湯','100')">旋覆代赭石湯</button></span>
+       <span><button onclick="putItem2('八珍湯','101')">八珍湯</button></span>
+       <span><button onclick="putItem2('定喘湯','102')">定喘湯</button></span>
+       <span><button onclick="putItem2('神秘湯','103')">神秘湯</button></span>
+       <span><button onclick="putItem2('烏藥順氣散','104')">烏藥順氣散</button></span>
+       <span><button onclick="putItem2('蘇子降氣湯','105')">蘇子降氣湯</button></span>
+       <span><button onclick="putItem2('十全大補湯','106')">十全大補湯</button></span>
+       <span><button onclick="putItem2('六君子湯','107')">六君子湯</button></span>
+       <span><button onclick="putItem2('四物湯','108')">四物湯</button></span>
+       <span><button onclick="putItem2('四君子湯','109')">四君子湯</button></span>
+       <span><button onclick="putItem2('桃紅四物湯','110')">桃紅四物湯</button></span>
+       <span><button onclick="putItem2('八味地黃丸','111')">八味地黃丸</button></span>
+       <span><button onclick="putItem2('血府逐瘀湯','112')">血府逐瘀湯</button></span>
+       <span><button onclick="putItem2('少腹逐瘀湯','113')">少腹逐瘀湯</button></span>
+       <span><button onclick="putItem2('知柏地黃丸','114')">知柏地黃丸</button></span>
+       <span><button onclick="putItem2('六味地黃丸','115')">六味地黃丸</button></span>
+       <span><button onclick="putItem2('左歸丸','116')">左歸丸</button></span>
+       <span><button onclick="putItem2('右歸丸','117')">右歸丸</button></span>
+       <span><button onclick="putItem2('桂枝茯苓丸','118')">桂枝茯苓丸</button></span>
+       <span><button onclick="putItem2('濟生腎氣丸','119')">濟生腎氣丸</button></span>
+       <span><button onclick="putItem2('桃核承氣湯','120')">桃核承氣湯</button></span>
+       <span><button onclick="putItem2('傷科復元活血湯','121')">傷科復元活血湯</button></span>
+       <span><button onclick="putItem2('正骨紫金丹','122')">正骨紫金丹</button></span>
+       <span><button onclick="putItem2('仙豐補腎丸','123')">仙豐補腎丸</button></span>
+       <span><button onclick="putItem2('仙豐胃散','124')">仙豐胃散</button></span>
+       <span><button onclick="putItem2('香砂六君子湯','125')">香砂六君子湯</button></span>
+       <span><button onclick="putItem2('參苓白朮散','126')">參苓白朮散</button></span>
+       <span><button onclick="putItem2('補中益氣湯','127')">補中益氣湯</button></span>
+       <span><button onclick="putItem2('黃耆五物湯','128')">黃耆五物湯</button></span>
+       <span><button onclick="putItem2('黃耆湯','129')">黃耆湯</button></span>
+       <span><button onclick="putItem2('生脈飲','130')">生脈飲</button></span>
+       <span><button onclick="putItem2('玉屏風散','131')">玉屏風散</button></span>
+       <span><button onclick="putItem2('聖愈湯','132')">聖愈湯</button></span>
+       <span><button onclick="putItem2('七寶美髯丹','133')">七寶美髯丹</button></span>
+       <span><button onclick="putItem2('秦艽鱉甲散','134')">秦艽鱉甲散</button></span>
+       <span><button onclick="putItem2('百合固金湯','135')">百合固金湯</button></span>
+       <span><button onclick="putItem2('益氣聰明湯','136')">益氣聰明湯</button></span>
+       <span><button onclick="putItem2('還少丹','137')">還少丹</button></span>
+       <span><button onclick="putItem2('天王補心丹','138')">天王補心丹</button></span>
+       <span><button onclick="putItem2('疏經活血湯','139')">疏經活血湯</button></span>
+       <span><button onclick="putItem2('通竅活血湯','140')">通竅活血湯</button></span>
+       <span><button onclick="putItem2('補陽還五湯','141')">補陽還五湯</button></span>
+       <span><button onclick="putItem2('鉤藤散','142')">鉤藤散</button></span>
+       <span><button onclick="putItem2('溫清飲','143')">溫清飲</button></span>
+       <span><button onclick="putItem2('槐花散','144')">槐花散</button></span>
+       <span><button onclick="putItem2('歸脾湯','145')">歸脾湯</button></span>
+       <span><button onclick="putItem2('養心湯','146')">養心湯</button></span>
+       <span><button onclick="putItem2('大青龍湯','147')">大青龍湯</button></span>
+       <span><button onclick="putItem2('柴葛解肌湯','148')">柴葛解肌湯</button></span>
+       <span><button onclick="putItem2('杏蘇散','149')">杏蘇散</button></span>
+       <span><button onclick="putItem2('升麻葛根湯','150')">升麻葛根湯</button></span>
+       <span><button onclick="putItem2('川芎茶調散','151')">川芎茶調散</button></span>
+       <span><button onclick="putItem2('優鼻湯','152')">優鼻湯</button></span>
+       <span><button onclick="putItem2('華蓋散','153')">華蓋散</button></span>
+       <span><button onclick="putItem2('九味羌活湯','154')">九味羌活湯</button></span>
+       <span><button onclick="putItem2('十神湯','155')">十神湯</button></span>
+       <span><button onclick="putItem2('小青龍湯','156')">小青龍湯</button></span>
+       <span><button onclick="putItem2('桂枝加芍藥湯','157')">桂枝加芍藥湯</button></span>
+       <span><button onclick="putItem2('射干麻黃湯','158')">射干麻黃湯</button></span>
+       <span><button onclick="putItem2('麻杏薏甘湯','159')">麻杏薏甘湯</button></span>
+       <span><button onclick="putItem2('人參敗毒散','160')">人參敗毒散</button></span>
+       <span><button onclick="putItem2('銀翹散','161')">銀翹散</button></span>
+       <span><button onclick="putItem2('桑菊飲','162')">桑菊飲</button></span>
+       <span><button onclick="putItem2('大柴胡湯','163')">大柴胡湯</button></span>
+       <span><button onclick="putItem2('柴胡桂枝湯','164')">柴胡桂枝湯</button></span>
+       <span><button onclick="putItem2('葛根黃連黃芩湯','165')">葛根黃連黃芩湯</button></span>
+       <span><button onclick="putItem2('香蘇散','166')">香蘇散</button></span>
+       <span><button onclick="putItem2('參蘇飲','167')">參蘇飲</button></span>
+       <span><button onclick="putItem2('防風通聖散','168')">防風通聖散</button></span>
+       <span><button onclick="putItem2('五積散','169')">五積散</button></span>
+       <span><button onclick="putItem2('小柴胡湯','170')">小柴胡湯</button></span>
+       <span><button onclick="putItem2('柴胡疏肝湯','171')">柴胡疏肝湯</button></span>
+       <span><button onclick="putItem2('柴胡清肝湯','172')">柴胡清肝湯</button></span>
+       <span><button onclick="putItem2('逍遙散','173')">逍遙散</button></span>
+       <span><button onclick="putItem2('加味逍遙散','174')">加味逍遙散</button></span>
+       <span><button onclick="putItem2('黃連湯','175')">黃連湯</button></span>
+       <span><button onclick="putItem2('芍藥甘草湯','176')">芍藥甘草湯</button></span>
+       <span><button onclick="putItem2('六和湯','177')">六和湯</button></span>
+       <span><button onclick="putItem2('溫膽湯','178')">溫膽湯</button></span>
+       <span><button onclick="putItem2('藿香正氣散','179')">藿香正氣散</button></span>
+       <span><button onclick="putItem2('痛瀉藥方','180')">痛瀉藥方</button></span>
+       <span><button onclick="putItem2('小承氣湯','181')">小承氣湯</button></span>
+       <span><button onclick="putItem2('大承氣湯','182')">大承氣湯</button></span>
+       <span><button onclick="putItem2('上中下通用痛風丸','183')">上中下通用痛風丸</button></span>
+       <span><button onclick="putItem2('三痺湯','184')">三痺湯</button></span>
+       <span><button onclick="putItem2('蠲痺湯','185')">蠲痺湯</button></span>
+       <span><button onclick="putItem2('獨活寄生湯','186')">獨活寄生湯</button></span>
+       <span><button onclick="putItem2('消風散','187')">消風散</button></span>
+       <span><button onclick="putItem2('二術湯','188')">二術湯</button></span>
+       <span><button onclick="putItem2('甘露消毒丹','189')">甘露消毒丹</button></span>
+       <span><button onclick="putItem2('防己黃耆湯','190')">防己黃耆湯</button></span>
+       <span><button onclick="putItem2('二陳湯','191')">二陳湯</button></span>
+       <span><button onclick="putItem2('止嗽散','192')">止嗽散</button></span>
+       <span><button onclick="putItem2('大黃牡丹皮湯','193')">大黃牡丹皮湯</button></span>
+       <span><button onclick="putItem2('麻桂各半湯','194')">麻桂各半湯</button></span>
+       <span><button onclick="putItem2('桂枝二越婢一湯','195')">桂枝二越婢一湯</button></span>
+       <span><button onclick="putItem2('越婢加半夏湯','196')">越婢加半夏湯</button></span>
+       <span><button onclick="putItem2('桂枝加半夏厚朴湯','197')">桂枝加半夏厚朴湯</button></span>
+       <span><button onclick="putItem2('柴胡桂枝乾薑湯','198')">柴胡桂枝乾薑湯</button></span>
+       <span><button onclick="putItem2('麻黃附子細辛湯','199')">麻黃附子細辛湯</button></span>
+       <span><button onclick="putItem2('七物降下湯','200')">七物降下湯</button></span>
+  
+  </div> 
+
+
+  <script>        
+           var allText2 = "";
+           var allText3 = "";
+           var allText4 = "";
+           var allText5 = "";
+           function putItem2(t1, t2)
+           {
+                    allText2 += "[formula]"+t1; 
+                    allText2 += "<br>"; 
+                    allText3 += "[note]"+t1+"  "+t2; 
+                    allText3 += "<br>"; 
+                    allText4 += "[table]"+t1; 
+                    allText4 += "<br>"; 
+                    allText5 += "0 "; 
+                    document.getElementById("display2").innerHTML = allText2; 
+                    document.getElementById("display3").innerHTML = allText3; 
+                    document.getElementById("display4").innerHTML = allText4; 
+                    document.getElementById("display5").innerHTML = allText5; 
+           }
+  </script>        
+
+</div> 
+
+</body> 
+</html> 
+

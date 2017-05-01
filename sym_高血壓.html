@@ -1,0 +1,425 @@
+<!doctype html> 
+<html> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>上醫堂診斷輔助程式程式</title> 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"> 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script> 
+  $( function() { 
+    $( "#tabs" ).tabs(); 
+  } ); 
+  </script> 
+</head> 
+<body> 
+
+         <img src="tcmTool_title.gif" height="218" width="800"> 
+          <table border="0" cellpadding="1" cellspacing="1" style="width: 600px"> 
+         <tr><td><h3>目前查詢主症: 高血壓</h2></td> 
+         <td><button align="left" onclick="location.href='tcmTool.html'" type="button"><h2>回首頁</h2></button></td></tr> 
+         </table> 
+         
+         <!--<p>數位人生哲學起課程式</p>--> 
+  
+<div id="tabs"> 
+  <ul> 
+    <li><a href="#tabs-1">辨證</a></li> 
+    <li><a href="#tabs-2">方劑分析</a></li> 
+    <li><a href="#tabs-3">特出項目</a></li> 
+    <li><a href="#tabs-4">方劑說明</a></li> 
+    <li><a href="#tabs-5">思惟矩陣</a></li> 
+  </ul> 
+<!--  
+=========================================================================== 
+TABS:          tabs-1 : 問診 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-1"> 
+ 
+<div> 
+    <form name="form_name" id="form_name"> 
+        <!--radio用法--> 
+ 
+       <table border="0" cellpadding="1" cellspacing="1" style="width: 360px"> 
+       <tbody> 
+
+ 
+<tr bgcolor = "#ffffff"><td><label>1. 潮紅</label></td>
+    <td><label><input name="q_1"type="radio" value=1 >Yes</label>
+        <label><input name="q_1"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>2. 眩暈</label></td>
+    <td><label><input name="q_2"type="radio" value=1 >Yes</label>
+        <label><input name="q_2"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>3. 健忘</label></td>
+    <td><label><input name="q_3"type="radio" value=1 >Yes</label>
+        <label><input name="q_3"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>4. 頭痛</label></td>
+    <td><label><input name="q_4"type="radio" value=1 >Yes</label>
+        <label><input name="q_4"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>5. 心浮氣躁</label></td>
+    <td><label><input name="q_5"type="radio" value=1 >Yes</label>
+        <label><input name="q_5"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>6. 睡眠品質差</label></td>
+    <td><label><input name="q_6"type="radio" value=1 >Yes</label>
+        <label><input name="q_6"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>7. 皮膚粗糙</label></td>
+    <td><label><input name="q_7"type="radio" value=1 >Yes</label>
+        <label><input name="q_7"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>8. 出血</label></td>
+    <td><label><input name="q_8"type="radio" value=1 >Yes</label>
+        <label><input name="q_8"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>9. 口苦</label></td>
+    <td><label><input name="q_9"type="radio" value=1 >Yes</label>
+        <label><input name="q_9"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>10. 口黏</label></td>
+    <td><label><input name="q_10"type="radio" value=1 >Yes</label>
+        <label><input name="q_10"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>11. 肩膀痠痛</label></td>
+    <td><label><input name="q_11"type="radio" value=1 >Yes</label>
+        <label><input name="q_11"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>12. 心悸</label></td>
+    <td><label><input name="q_12"type="radio" value=1 >Yes</label>
+        <label><input name="q_12"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>13. 胸口悶</label></td>
+    <td><label><input name="q_13"type="radio" value=1 >Yes</label>
+        <label><input name="q_13"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>14. 便祕</label></td>
+    <td><label><input name="q_14"type="radio" value=1 >Yes</label>
+        <label><input name="q_14"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>15. 夜尿</label></td>
+    <td><label><input name="q_15"type="radio" value=1 >Yes</label>
+        <label><input name="q_15"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>16. 手腳冰冷</label></td>
+    <td><label><input name="q_16"type="radio" value=1 >Yes</label>
+        <label><input name="q_16"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#ffffff"><td><label>17. 全身倦怠</label></td>
+    <td><label><input name="q_17"type="radio" value=1 >Yes</label>
+        <label><input name="q_17"type="radio" value=0 checked>No</label></td>
+</tr>
+<tr bgcolor = "#eeffee"><td><label>18. 容易疲累</label></td>
+    <td><label><input name="q_18"type="radio" value=1 >Yes</label>
+        <label><input name="q_18"type="radio" value=0 checked>No</label></td>
+</tr>
+ </tbody> 
+       </table>
+
+        <button onclick="getValue()">開始計算</button>
+    </form>
+</div>
+       
+<script>
+ function getValue(){
+            //  讀取radio的值
+            var form = document.getElementById("form_name");
+ 
+            var qc_1  = "潮紅";
+            var qc_2  = "眩暈";
+            var qc_3  = "健忘";
+            var qc_4  = "頭痛";
+            var qc_5  = "心浮氣躁";
+            var qc_6  = "睡眠品質差";
+            var qc_7  = "皮膚粗糙";
+            var qc_8  = "出血";
+            var qc_9  = "口苦";
+            var qc_10  = "口黏";
+            var qc_11  = "肩膀痠痛";
+            var qc_12  = "心悸";
+            var qc_13  = "胸口悶";
+            var qc_14  = "便祕";
+            var qc_15  = "夜尿";
+            var qc_16  = "手腳冰冷";
+            var qc_17  = "全身倦怠";
+            var qc_18  = "容易疲累";
+            var all_qc = "有特出的症狀: <br><ul>  ";
+          var a_1;
+          var a_2;
+          var a_3;
+          var a_4;
+          var a_5;
+          var a_6;
+          var a_7;
+          var a_8;
+          var a_9;
+          var a_10;
+          var a_11;
+          var a_12;
+          var a_13;
+          var a_14;
+          var a_15;
+          var a_16;
+          var a_17;
+          var a_18;
+          for(var i=0; i<form.q_1.length;i++){;
+              if(form.q_1[i].checked)a_1 = form.q_1[i].value; 
+          }
+          for(var i=0; i<form.q_2.length;i++){;
+              if(form.q_2[i].checked)a_2 = form.q_2[i].value; 
+          }
+          for(var i=0; i<form.q_3.length;i++){;
+              if(form.q_3[i].checked)a_3 = form.q_3[i].value; 
+          }
+          for(var i=0; i<form.q_4.length;i++){;
+              if(form.q_4[i].checked)a_4 = form.q_4[i].value; 
+          }
+          for(var i=0; i<form.q_5.length;i++){;
+              if(form.q_5[i].checked)a_5 = form.q_5[i].value; 
+          }
+          for(var i=0; i<form.q_6.length;i++){;
+              if(form.q_6[i].checked)a_6 = form.q_6[i].value; 
+          }
+          for(var i=0; i<form.q_7.length;i++){;
+              if(form.q_7[i].checked)a_7 = form.q_7[i].value; 
+          }
+          for(var i=0; i<form.q_8.length;i++){;
+              if(form.q_8[i].checked)a_8 = form.q_8[i].value; 
+          }
+          for(var i=0; i<form.q_9.length;i++){;
+              if(form.q_9[i].checked)a_9 = form.q_9[i].value; 
+          }
+          for(var i=0; i<form.q_10.length;i++){;
+              if(form.q_10[i].checked)a_10 = form.q_10[i].value; 
+          }
+          for(var i=0; i<form.q_11.length;i++){;
+              if(form.q_11[i].checked)a_11 = form.q_11[i].value; 
+          }
+          for(var i=0; i<form.q_12.length;i++){;
+              if(form.q_12[i].checked)a_12 = form.q_12[i].value; 
+          }
+          for(var i=0; i<form.q_13.length;i++){;
+              if(form.q_13[i].checked)a_13 = form.q_13[i].value; 
+          }
+          for(var i=0; i<form.q_14.length;i++){;
+              if(form.q_14[i].checked)a_14 = form.q_14[i].value; 
+          }
+          for(var i=0; i<form.q_15.length;i++){;
+              if(form.q_15[i].checked)a_15 = form.q_15[i].value; 
+          }
+          for(var i=0; i<form.q_16.length;i++){;
+              if(form.q_16[i].checked)a_16 = form.q_16[i].value; 
+          }
+          for(var i=0; i<form.q_17.length;i++){;
+              if(form.q_17[i].checked)a_17 = form.q_17[i].value; 
+          }
+          for(var i=0; i<form.q_18.length;i++){;
+              if(form.q_18[i].checked)a_18 = form.q_18[i].value; 
+          }
+          var st_a = [2,1,0,2,2,2,0,2,0,0,0,2,3,0,0,0,0,0]
+          var st_b = [2,1,0,1,1,3,0,2,0,0,0,0,3,3,0,0,0,0]
+          var st_c = [0,0,0,0,3,3,0,0,3,3,2,3,0,3,0,3,0,2]
+          var st_d = [0,0,0,0,2,3,0,0,3,3,3,0,2,3,0,0,0,0]
+          var st_e = [3,0,0,1,2,2,0,0,0,0,2,1,0,3,0,0,0,3]
+          var st_f = [0,0,0,0,0,0,2,1,0,0,1,0,0,0,0,2,3,3]
+          var st_g = [0,1,2,3,0,3,3,0,0,0,2,1,0,0,2,0,0,0]
+          var st_h = [0,2,0,2,1,1,0,0,0,0,2,0,2,0,0,1,1,2]
+          var st_i = [0,0,1,0,0,0,0,0,0,0,0,0,1,0,3,2,2,0]
+          var st_j = [0,2,0,0,0,0,0,0,0,0,0,2,2,0,0,3,3,2]
+
+          var i_a =0;
+          var i_b =0;
+          var i_c =0;
+          var i_d =0;
+          var i_e =0;
+          var i_f =0;
+          var i_g =0;
+          var i_h =0;
+          var i_i =0;
+          var i_j =0;
+
+          if (a_1 == 1) {all_qc+="<li>"+qc_1+"</li>" ; i_a+=st_a[0]; i_b+=st_b[0]; i_c+=st_c[0]; i_d+=st_d[0]; i_e+=st_e[0]; i_f+=st_f[0]; i_g+=st_g[0]; i_h+=st_h[0]; i_i+=st_i[0]; i_j+=st_j[0];  } 
+          if (a_2 == 1) {all_qc+="<li>"+qc_2+"</li>" ; i_a+=st_a[1]; i_b+=st_b[1]; i_c+=st_c[1]; i_d+=st_d[1]; i_e+=st_e[1]; i_f+=st_f[1]; i_g+=st_g[1]; i_h+=st_h[1]; i_i+=st_i[1]; i_j+=st_j[1];  } 
+          if (a_3 == 1) {all_qc+="<li>"+qc_3+"</li>" ; i_a+=st_a[2]; i_b+=st_b[2]; i_c+=st_c[2]; i_d+=st_d[2]; i_e+=st_e[2]; i_f+=st_f[2]; i_g+=st_g[2]; i_h+=st_h[2]; i_i+=st_i[2]; i_j+=st_j[2];  } 
+          if (a_4 == 1) {all_qc+="<li>"+qc_4+"</li>" ; i_a+=st_a[3]; i_b+=st_b[3]; i_c+=st_c[3]; i_d+=st_d[3]; i_e+=st_e[3]; i_f+=st_f[3]; i_g+=st_g[3]; i_h+=st_h[3]; i_i+=st_i[3]; i_j+=st_j[3];  } 
+          if (a_5 == 1) {all_qc+="<li>"+qc_5+"</li>" ; i_a+=st_a[4]; i_b+=st_b[4]; i_c+=st_c[4]; i_d+=st_d[4]; i_e+=st_e[4]; i_f+=st_f[4]; i_g+=st_g[4]; i_h+=st_h[4]; i_i+=st_i[4]; i_j+=st_j[4];  } 
+          if (a_6 == 1) {all_qc+="<li>"+qc_6+"</li>" ; i_a+=st_a[5]; i_b+=st_b[5]; i_c+=st_c[5]; i_d+=st_d[5]; i_e+=st_e[5]; i_f+=st_f[5]; i_g+=st_g[5]; i_h+=st_h[5]; i_i+=st_i[5]; i_j+=st_j[5];  } 
+          if (a_7 == 1) {all_qc+="<li>"+qc_7+"</li>" ; i_a+=st_a[6]; i_b+=st_b[6]; i_c+=st_c[6]; i_d+=st_d[6]; i_e+=st_e[6]; i_f+=st_f[6]; i_g+=st_g[6]; i_h+=st_h[6]; i_i+=st_i[6]; i_j+=st_j[6];  } 
+          if (a_8 == 1) {all_qc+="<li>"+qc_8+"</li>" ; i_a+=st_a[7]; i_b+=st_b[7]; i_c+=st_c[7]; i_d+=st_d[7]; i_e+=st_e[7]; i_f+=st_f[7]; i_g+=st_g[7]; i_h+=st_h[7]; i_i+=st_i[7]; i_j+=st_j[7];  } 
+          if (a_9 == 1) {all_qc+="<li>"+qc_9+"</li>" ; i_a+=st_a[8]; i_b+=st_b[8]; i_c+=st_c[8]; i_d+=st_d[8]; i_e+=st_e[8]; i_f+=st_f[8]; i_g+=st_g[8]; i_h+=st_h[8]; i_i+=st_i[8]; i_j+=st_j[8];  } 
+          if (a_10 == 1) {all_qc+="<li>"+qc_10+"</li>" ; i_a+=st_a[9]; i_b+=st_b[9]; i_c+=st_c[9]; i_d+=st_d[9]; i_e+=st_e[9]; i_f+=st_f[9]; i_g+=st_g[9]; i_h+=st_h[9]; i_i+=st_i[9]; i_j+=st_j[9];  } 
+          if (a_11 == 1) {all_qc+="<li>"+qc_11+"</li>" ; i_a+=st_a[10]; i_b+=st_b[10]; i_c+=st_c[10]; i_d+=st_d[10]; i_e+=st_e[10]; i_f+=st_f[10]; i_g+=st_g[10]; i_h+=st_h[10]; i_i+=st_i[10]; i_j+=st_j[10];  } 
+          if (a_12 == 1) {all_qc+="<li>"+qc_12+"</li>" ; i_a+=st_a[11]; i_b+=st_b[11]; i_c+=st_c[11]; i_d+=st_d[11]; i_e+=st_e[11]; i_f+=st_f[11]; i_g+=st_g[11]; i_h+=st_h[11]; i_i+=st_i[11]; i_j+=st_j[11];  } 
+          if (a_13 == 1) {all_qc+="<li>"+qc_13+"</li>" ; i_a+=st_a[12]; i_b+=st_b[12]; i_c+=st_c[12]; i_d+=st_d[12]; i_e+=st_e[12]; i_f+=st_f[12]; i_g+=st_g[12]; i_h+=st_h[12]; i_i+=st_i[12]; i_j+=st_j[12];  } 
+          if (a_14 == 1) {all_qc+="<li>"+qc_14+"</li>" ; i_a+=st_a[13]; i_b+=st_b[13]; i_c+=st_c[13]; i_d+=st_d[13]; i_e+=st_e[13]; i_f+=st_f[13]; i_g+=st_g[13]; i_h+=st_h[13]; i_i+=st_i[13]; i_j+=st_j[13];  } 
+          if (a_15 == 1) {all_qc+="<li>"+qc_15+"</li>" ; i_a+=st_a[14]; i_b+=st_b[14]; i_c+=st_c[14]; i_d+=st_d[14]; i_e+=st_e[14]; i_f+=st_f[14]; i_g+=st_g[14]; i_h+=st_h[14]; i_i+=st_i[14]; i_j+=st_j[14];  } 
+          if (a_16 == 1) {all_qc+="<li>"+qc_16+"</li>" ; i_a+=st_a[15]; i_b+=st_b[15]; i_c+=st_c[15]; i_d+=st_d[15]; i_e+=st_e[15]; i_f+=st_f[15]; i_g+=st_g[15]; i_h+=st_h[15]; i_i+=st_i[15]; i_j+=st_j[15];  } 
+          if (a_17 == 1) {all_qc+="<li>"+qc_17+"</li>" ; i_a+=st_a[16]; i_b+=st_b[16]; i_c+=st_c[16]; i_d+=st_d[16]; i_e+=st_e[16]; i_f+=st_f[16]; i_g+=st_g[16]; i_h+=st_h[16]; i_i+=st_i[16]; i_j+=st_j[16];  } 
+          if (a_18 == 1) {all_qc+="<li>"+qc_18+"</li>" ; i_a+=st_a[17]; i_b+=st_b[17]; i_c+=st_c[17]; i_d+=st_d[17]; i_e+=st_e[17]; i_f+=st_f[17]; i_g+=st_g[17]; i_h+=st_h[17]; i_i+=st_i[17]; i_j+=st_j[17];  } 
+          all_qc += "</ul>  "; 
+  localStorage.setItem("bar_a", i_a);
+  localStorage.setItem("bar_b", i_b);
+  localStorage.setItem("bar_c", i_c);
+  localStorage.setItem("bar_d", i_d);
+  localStorage.setItem("bar_e", i_e);
+  localStorage.setItem("bar_f", i_f);
+  localStorage.setItem("bar_g", i_g);
+  localStorage.setItem("bar_h", i_h);
+  localStorage.setItem("bar_i", i_i);
+  localStorage.setItem("bar_j", i_j);
+  localStorage.setItem("bar_allqc", all_qc);
+}
+</script>
+
+</div>
+
+<!-- 
+===========================================================================
+TABS:          tabs-2 : 體質分析
+===========================================================================
+-->
+
+  <div id="tabs-2">
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>       
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+ function drawChart(){
+
+      var sp_a = parseInt(localStorage.getItem("bar_a"));
+      var sp_b = parseInt(localStorage.getItem("bar_b"));
+      var sp_c = parseInt(localStorage.getItem("bar_c"));
+      var sp_d = parseInt(localStorage.getItem("bar_d"));
+      var sp_e = parseInt(localStorage.getItem("bar_e"));
+      var sp_f = parseInt(localStorage.getItem("bar_f"));
+      var sp_g = parseInt(localStorage.getItem("bar_g"));
+      var sp_h = parseInt(localStorage.getItem("bar_h"));
+      var sp_i = parseInt(localStorage.getItem("bar_i"));
+      var sp_j = parseInt(localStorage.getItem("bar_j"));
+
+
+      var data = google.visualization.arrayToDataTable([ 
+        ["Element", "傾向度", { role: "style" } ], 
+        ["黃連解毒湯", sp_a, "#FFFFCC"],
+        ["三黃瀉心湯", sp_b, "#CCE6FF"],
+        ["柴胡加龍骨牡蠣湯", sp_c, "#FF7142"],
+        ["大柴胡湯", sp_d, "#FF4405"],
+        ["防風通聖散", sp_e, "#00B359"],
+        ["七物降下湯", sp_f, "#FF2E2E"],
+        ["鉤藤散", sp_g, "#5900B3"],
+        ["半夏天麻白朮湯", sp_h, "#FFFF29"],
+        ["八味地黃丸", sp_i, "#88DDCC"],
+        ["真武湯", sp_j, "#99E6DD"],
+      ]);      var view = new google.visualization.DataView(data); 
+      view.setColumns([0, 1, 
+                       { calc: "stringify", 
+                         sourceColumn: 1, 
+                         type: "string", 
+                         role: "annotation" }, 
+                       2]); 
+ 
+      var options = { 
+        title: "電腦分析結果一覽", 
+        width: 800, 
+        height: 600, 
+        bar: {groupWidth: "60%"}, 
+        legend: { position: "none" }, 
+        hAxis : {  
+            textStyle : { 
+                fontSize: 7 // or the number you want 
+            } 
+         } 
+      }; 
+      var chart = new google.visualization.BarChart(document.getElementById("columnchart_values")); 
+      chart.draw(view, options);   
+ 
+ } 
+</script>               
+</head> 
+ 
+    <div id="mouseoverdiv"></div> 
+    <div id="columnchart_values" style="width: 500px; height: 200px;"></div> 
+ 
+        <button onclick="drawChart()">開始計算</button> 
+ 
+        
+  </div> 
+  
+ 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-3 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-3"> 
+ 
+       <div id="allqc"></div> 
+       <script> 
+        var all_qc = localStorage.getItem("bar_allqc"); 
+        document.getElementById("allqc").innerHTML = all_qc; 
+       </script> 
+        
+        
+</div> 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-4 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-4"> 
+   <div> 
+      <span><button onclick="putNote('note/formula_60.html')">黃連解毒湯</button></span>
+       <span><button onclick="putNote('note/formula_50.html')">三黃瀉心湯</button></span>
+       <span><button onclick="putNote('note/formula_95.html')">柴胡加龍骨牡蠣湯</button></span>
+       <span><button onclick="putNote('note/formula_163.html')">大柴胡湯</button></span>
+       <span><button onclick="putNote('note/formula_168.html')">防風通聖散</button></span>
+       <span><button onclick="putNote('note/formula_200.html')">七物降下湯</button></span>
+       <span><button onclick="putNote('note/formula_142.html')">鉤藤散</button></span>
+       <span><button onclick="putNote('note/formula_4.html')">半夏天麻白朮湯</button></span>
+       <span><button onclick="putNote('note/formula_111.html')">八味地黃丸</button></span>
+       <span><button onclick="putNote('note/formula_16.html')">真武湯</button></span>
+  
+  </div> 
+
+  <div id="noteNow"></div> 
+
+  <script>        
+          
+           function putNote(index)
+           {
+                    var content = index;
+                    document.getElementById("noteNow").innerHTML = '<object width="900" height="900" type="text/html" data='+content+'></object>';
+           }
+  </script>        
+
+</div> 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-5 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-5"> 
+   <div> 
+<p style="margin: 0px; font-size: 16px; font-family: Menlo;">
+
++-- 潮紅<br>| +-- 眩暈<br>| | +-- 健忘<br>| | | +-- 頭痛<br>| | | | +-- 心浮氣躁<br>| | | | | +-- 睡眠品質差<br>| | | | | | +-- 皮膚粗糙<br>| | | | | | | +-- 出血<br>| | | | | | | | +-- 口苦<br>| | | | | | | | | +-- 口黏<br>| | | | | | | | | | +-- 肩膀痠痛<br>| | | | | | | | | | | +-- 心悸<br>| | | | | | | | | | | | +-- 胸口悶<br>| | | | | | | | | | | | | +-- 便祕<br>| | | | | | | | | | | | | | +-- 夜尿<br>| | | | | | | | | | | | | | | +-- 手腳冰冷<br>| | | | | | | | | | | | | | | | +-- 全身倦怠<br>| | | | | | | | | | | | | | | | | +-- 容易疲累<br>| | | | | | | | | | | | | | | | | | <br>2 1 0 2 2 2 0 2 0 0 0 2 3 0 0 0 0 0 黃連解毒湯<br>2 1 0 1 1 3 0 2 0 0 0 0 3 3 0 0 0 0 三黃瀉心湯<br>0 0 0 0 3 3 0 0 3 3 2 3 0 3 0 3 0 2 柴胡加龍骨牡蠣湯<br>0 0 0 0 2 3 0 0 3 3 3 0 2 3 0 0 0 0 大柴胡湯<br>3 0 0 1 2 2 0 0 0 0 2 1 0 3 0 0 0 3 防風通聖散<br>0 0 0 0 0 0 2 1 0 0 1 0 0 0 0 2 3 3 七物降下湯<br>0 1 2 3 0 3 3 0 0 0 2 1 0 0 2 0 0 0 鉤藤散<br>0 2 0 2 1 1 0 0 0 0 2 0 2 0 0 1 1 2 半夏天麻白朮湯<br>0 0 1 0 0 0 0 0 0 0 0 0 1 0 3 2 2 0 八味地黃丸<br>0 2 0 0 0 0 0 0 0 0 0 2 2 0 0 3 3 2 真武湯<br></p> 
+</div> 
+
+</body> 
+</html> 
+
