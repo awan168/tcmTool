@@ -1,0 +1,569 @@
+<!doctype html> 
+<html> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>上醫堂診斷輔助程式程式</title> 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"> 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script> 
+  $( function() { 
+    $( "#tabs" ).tabs(); 
+  } ); 
+  </script> 
+</head> 
+<body> 
+
+         <img src="tcmTool_title.gif" height="218" width="800"> 
+          <table border="0" cellpadding="1" cellspacing="1" style="width: 600px"> 
+         <tr><td><h3>目前查詢主症: 居家日用方劑整理</h2></td> 
+         <td><button align="left" onclick="location.href='tcmTool.html'" type="button"><h2>回首頁</h2></button></td></tr> 
+         </table> 
+         
+         <!--<p>數位人生哲學起課程式</p>--> 
+  
+<div id="tabs"> 
+  <ul> 
+    <li><a href="#tabs-1">辨證</a></li> 
+    <li><a href="#tabs-2">方劑分析</a></li> 
+    <li><a href="#tabs-3">特出項目</a></li> 
+    <li><a href="#tabs-4">方劑說明</a></li> 
+    <li><a href="#tabs-5">思惟矩陣</a></li> 
+  </ul> 
+<!--  
+=========================================================================== 
+TABS:          tabs-1 : 問診 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-1"> 
+ 
+<div> 
+    <form name="form_name" id="form_name"> 
+        <!--radio用法--> 
+ 
+       <table border="0" cellpadding="1" cellspacing="1" style="width: 360px"> 
+       <tbody> 
+
+ 
+<tr bgcolor = "#ffffff"><td><label>1. 周邊的人開始感冒<input type="checkbox" id="symp_Check_1"></label></td>
+<tr bgcolor = "#eeffee"><td><label>2. 平常就很容昜感冒<input type="checkbox" id="symp_Check_2"></label></td>
+<tr bgcolor = "#ffffff"><td><label>3. 覺得自己感冒了<input type="checkbox" id="symp_Check_3"></label></td>
+<tr bgcolor = "#eeffee"><td><label>4. 還有一點汗的感冒<input type="checkbox" id="symp_Check_4"></label></td>
+<tr bgcolor = "#ffffff"><td><label>5. 無汗、身痛的感冒<input type="checkbox" id="symp_Check_5"></label></td>
+<tr bgcolor = "#eeffee"><td><label>6. 感冒兩三天而有清鼻涕、清痰<input type="checkbox" id="symp_Check_6"></label></td>
+<tr bgcolor = "#ffffff"><td><label>7. 感冒中間期<input type="checkbox" id="symp_Check_7"></label></td>
+<tr bgcolor = "#eeffee"><td><label>8. 發燒<input type="checkbox" id="symp_Check_8"></label></td>
+<tr bgcolor = "#ffffff"><td><label>9. 發燒時好時壞(往來寒熱)<input type="checkbox" id="symp_Check_9"></label></td>
+<tr bgcolor = "#eeffee"><td><label>10. 女子月經期間<input type="checkbox" id="symp_Check_10"></label></td>
+<tr bgcolor = "#ffffff"><td><label>11. 腸胃型感冒<input type="checkbox" id="symp_Check_11"></label></td>
+<tr bgcolor = "#eeffee"><td><label>12. 腹瀉:拉肚子水瀉(腹痛不甚)<input type="checkbox" id="symp_Check_12"></label></td>
+<tr bgcolor = "#ffffff"><td><label>13. 腹瀉:拉肚子水瀉(熱、臭、腹痛)<input type="checkbox" id="symp_Check_13"></label></td>
+<tr bgcolor = "#eeffee"><td><label>14. 清鼻水仍有<input type="checkbox" id="symp_Check_14"></label></td>
+<tr bgcolor = "#ffffff"><td><label>15. 咳嗽仍有<input type="checkbox" id="symp_Check_15"></label></td>
+<tr bgcolor = "#eeffee"><td><label>16. 身體虛弱<input type="checkbox" id="symp_Check_16"></label></td>
+<tr bgcolor = "#ffffff"><td><label>17. 肚子不舒服<input type="checkbox" id="symp_Check_17"></label></td>
+<tr bgcolor = "#eeffee"><td><label>18. 莫名還會發燒<input type="checkbox" id="symp_Check_18"></label></td>
+<tr bgcolor = "#ffffff"><td><label>19. 一受冷或吹風就咳<input type="checkbox" id="symp_Check_19"></label></td>
+<tr bgcolor = "#eeffee"><td><label>20. 多痰的咳<input type="checkbox" id="symp_Check_20"></label></td>
+<tr bgcolor = "#ffffff"><td><label>21. 乾咳<input type="checkbox" id="symp_Check_21"></label></td>
+<tr bgcolor = "#eeffee"><td><label>22. 少痰或黏稠痰的咳<input type="checkbox" id="symp_Check_22"></label></td>
+<tr bgcolor = "#ffffff"><td><label>23. 青白色痰、鼻涕<input type="checkbox" id="symp_Check_23"></label></td>
+<tr bgcolor = "#eeffee"><td><label>24. 寒喘<input type="checkbox" id="symp_Check_24"></label></td>
+<tr bgcolor = "#ffffff"><td><label>25. 脹氣<input type="checkbox" id="symp_Check_25"></label></td>
+<tr bgcolor = "#eeffee"><td><label>26. 消化不良<input type="checkbox" id="symp_Check_26"></label></td>
+<tr bgcolor = "#ffffff"><td><label>27. 吃壞肚子<input type="checkbox" id="symp_Check_27"></label></td>
+<tr bgcolor = "#eeffee"><td><label>28. 肌肉酸痛緊繃<input type="checkbox" id="symp_Check_28"></label></td>
+<tr bgcolor = "#ffffff"><td><label>29. 口苦<input type="checkbox" id="symp_Check_29"></label></td>
+<tr bgcolor = "#eeffee"><td><label>30. 咽喉乾<input type="checkbox" id="symp_Check_30"></label></td>
+<tr bgcolor = "#ffffff"><td><label>31. 咽喉痛<input type="checkbox" id="symp_Check_31"></label></td>
+<tr bgcolor = "#eeffee"><td><label>32. 說話太多、沙啞<input type="checkbox" id="symp_Check_32"></label></td>
+<tr bgcolor = "#ffffff"><td><label>33. 目眩<input type="checkbox" id="symp_Check_33"></label></td>
+<tr bgcolor = "#eeffee"><td><label>34. 眼壓過高<input type="checkbox" id="symp_Check_34"></label></td>
+<tr bgcolor = "#ffffff"><td><label>35. 暈車<input type="checkbox" id="symp_Check_35"></label></td>
+<tr bgcolor = "#eeffee"><td><label>36. 暈眩<input type="checkbox" id="symp_Check_36"></label></td>
+<tr bgcolor = "#ffffff"><td><label>37. 心煩<input type="checkbox" id="symp_Check_37"></label></td>
+<tr bgcolor = "#eeffee"><td><label>38. 胸脅悶痛<input type="checkbox" id="symp_Check_38"></label></td>
+<tr bgcolor = "#ffffff"><td><label>39. 食慾不振<input type="checkbox" id="symp_Check_39"></label></td>
+<tr bgcolor = "#eeffee"><td><label>40. 嘔吐、水逆<input type="checkbox" id="symp_Check_40"></label></td>
+<tr bgcolor = "#ffffff"><td><label>41. 欲嘔吐、噁心<input type="checkbox" id="symp_Check_41"></label></td>
+<tr bgcolor = "#eeffee"><td><label>42. 眼睛不舒服<input type="checkbox" id="symp_Check_42"></label></td>
+<tr bgcolor = "#ffffff"><td><label>43. 耳朵不舒服<input type="checkbox" id="symp_Check_43"></label></td>
+<tr bgcolor = "#eeffee"><td><label>44. 咽喉不舒服<input type="checkbox" id="symp_Check_44"></label></td>
+<tr bgcolor = "#ffffff"><td><label>45. 耳嗚初起<input type="checkbox" id="symp_Check_45"></label></td>
+<tr bgcolor = "#eeffee"><td><label>46. 腹痛<input type="checkbox" id="symp_Check_46"></label></td>
+<tr bgcolor = "#ffffff"><td><label>47. 經痛<input type="checkbox" id="symp_Check_47"></label></td>
+<tr bgcolor = "#eeffee"><td><label>48. 欲止痛<input type="checkbox" id="symp_Check_48"></label></td>
+<tr bgcolor = "#ffffff"><td><label>49. 小腿抽筋<input type="checkbox" id="symp_Check_49"></label></td>
+<tr bgcolor = "#eeffee"><td><label>50. 靜脈曲張<input type="checkbox" id="symp_Check_50"></label></td>
+ </tbody> 
+       </table>
+
+        <button onclick="getValue()">開始計算</button>
+    </form>
+</div>
+       
+<script>
+ function getValue(){
+            //  讀取radio的值
+            var form = document.getElementById("form_name");
+ 
+            var qc_1  = "周邊的人開始感冒";
+            var qc_2  = "平常就很容昜感冒";
+            var qc_3  = "覺得自己感冒了";
+            var qc_4  = "還有一點汗的感冒";
+            var qc_5  = "無汗、身痛的感冒";
+            var qc_6  = "感冒兩三天而有清鼻涕、清痰";
+            var qc_7  = "感冒中間期";
+            var qc_8  = "發燒";
+            var qc_9  = "發燒時好時壞(往來寒熱)";
+            var qc_10  = "女子月經期間";
+            var qc_11  = "腸胃型感冒";
+            var qc_12  = "腹瀉:拉肚子水瀉(腹痛不甚)";
+            var qc_13  = "腹瀉:拉肚子水瀉(熱、臭、腹痛)";
+            var qc_14  = "清鼻水仍有";
+            var qc_15  = "咳嗽仍有";
+            var qc_16  = "身體虛弱";
+            var qc_17  = "肚子不舒服";
+            var qc_18  = "莫名還會發燒";
+            var qc_19  = "一受冷或吹風就咳";
+            var qc_20  = "多痰的咳";
+            var qc_21  = "乾咳";
+            var qc_22  = "少痰或黏稠痰的咳";
+            var qc_23  = "青白色痰、鼻涕";
+            var qc_24  = "寒喘";
+            var qc_25  = "脹氣";
+            var qc_26  = "消化不良";
+            var qc_27  = "吃壞肚子";
+            var qc_28  = "肌肉酸痛緊繃";
+            var qc_29  = "口苦";
+            var qc_30  = "咽喉乾";
+            var qc_31  = "咽喉痛";
+            var qc_32  = "說話太多、沙啞";
+            var qc_33  = "目眩";
+            var qc_34  = "眼壓過高";
+            var qc_35  = "暈車";
+            var qc_36  = "暈眩";
+            var qc_37  = "心煩";
+            var qc_38  = "胸脅悶痛";
+            var qc_39  = "食慾不振";
+            var qc_40  = "嘔吐、水逆";
+            var qc_41  = "欲嘔吐、噁心";
+            var qc_42  = "眼睛不舒服";
+            var qc_43  = "耳朵不舒服";
+            var qc_44  = "咽喉不舒服";
+            var qc_45  = "耳嗚初起";
+            var qc_46  = "腹痛";
+            var qc_47  = "經痛";
+            var qc_48  = "欲止痛";
+            var qc_49  = "小腿抽筋";
+            var qc_50  = "靜脈曲張";
+            var all_qc = "有特出的症狀: <br><ul>  ";
+          var a_1;
+          var a_2;
+          var a_3;
+          var a_4;
+          var a_5;
+          var a_6;
+          var a_7;
+          var a_8;
+          var a_9;
+          var a_10;
+          var a_11;
+          var a_12;
+          var a_13;
+          var a_14;
+          var a_15;
+          var a_16;
+          var a_17;
+          var a_18;
+          var a_19;
+          var a_20;
+          var a_21;
+          var a_22;
+          var a_23;
+          var a_24;
+          var a_25;
+          var a_26;
+          var a_27;
+          var a_28;
+          var a_29;
+          var a_30;
+          var a_31;
+          var a_32;
+          var a_33;
+          var a_34;
+          var a_35;
+          var a_36;
+          var a_37;
+          var a_38;
+          var a_39;
+          var a_40;
+          var a_41;
+          var a_42;
+          var a_43;
+          var a_44;
+          var a_45;
+          var a_46;
+          var a_47;
+          var a_48;
+          var a_49;
+          var a_50;
+     a_1 = document.getElementById("symp_Check_1");
+     a_2 = document.getElementById("symp_Check_2");
+     a_3 = document.getElementById("symp_Check_3");
+     a_4 = document.getElementById("symp_Check_4");
+     a_5 = document.getElementById("symp_Check_5");
+     a_6 = document.getElementById("symp_Check_6");
+     a_7 = document.getElementById("symp_Check_7");
+     a_8 = document.getElementById("symp_Check_8");
+     a_9 = document.getElementById("symp_Check_9");
+     a_10 = document.getElementById("symp_Check_10");
+     a_11 = document.getElementById("symp_Check_11");
+     a_12 = document.getElementById("symp_Check_12");
+     a_13 = document.getElementById("symp_Check_13");
+     a_14 = document.getElementById("symp_Check_14");
+     a_15 = document.getElementById("symp_Check_15");
+     a_16 = document.getElementById("symp_Check_16");
+     a_17 = document.getElementById("symp_Check_17");
+     a_18 = document.getElementById("symp_Check_18");
+     a_19 = document.getElementById("symp_Check_19");
+     a_20 = document.getElementById("symp_Check_20");
+     a_21 = document.getElementById("symp_Check_21");
+     a_22 = document.getElementById("symp_Check_22");
+     a_23 = document.getElementById("symp_Check_23");
+     a_24 = document.getElementById("symp_Check_24");
+     a_25 = document.getElementById("symp_Check_25");
+     a_26 = document.getElementById("symp_Check_26");
+     a_27 = document.getElementById("symp_Check_27");
+     a_28 = document.getElementById("symp_Check_28");
+     a_29 = document.getElementById("symp_Check_29");
+     a_30 = document.getElementById("symp_Check_30");
+     a_31 = document.getElementById("symp_Check_31");
+     a_32 = document.getElementById("symp_Check_32");
+     a_33 = document.getElementById("symp_Check_33");
+     a_34 = document.getElementById("symp_Check_34");
+     a_35 = document.getElementById("symp_Check_35");
+     a_36 = document.getElementById("symp_Check_36");
+     a_37 = document.getElementById("symp_Check_37");
+     a_38 = document.getElementById("symp_Check_38");
+     a_39 = document.getElementById("symp_Check_39");
+     a_40 = document.getElementById("symp_Check_40");
+     a_41 = document.getElementById("symp_Check_41");
+     a_42 = document.getElementById("symp_Check_42");
+     a_43 = document.getElementById("symp_Check_43");
+     a_44 = document.getElementById("symp_Check_44");
+     a_45 = document.getElementById("symp_Check_45");
+     a_46 = document.getElementById("symp_Check_46");
+     a_47 = document.getElementById("symp_Check_47");
+     a_48 = document.getElementById("symp_Check_48");
+     a_49 = document.getElementById("symp_Check_49");
+     a_50 = document.getElementById("symp_Check_50");
+          var st_a = [1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+          var st_b = [0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+          var st_c = [0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+          var st_d = [0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,1,1,1,0,1,1,1,1,1,0,0,0,0,0]
+          var st_e = [0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]
+          var st_f = [0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+          var st_g = [0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+          var st_h = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0]
+          var st_i = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1]
+          var st_j = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+          var st_k = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+          var i_a =0;
+          var i_b =0;
+          var i_c =0;
+          var i_d =0;
+          var i_e =0;
+          var i_f =0;
+          var i_g =0;
+          var i_h =0;
+          var i_i =0;
+          var i_j =0;
+          var i_k =0;
+
+          if (a_1.checked == true) {all_qc+="<li>"+qc_1+"</li>" ; i_a+=st_a[0]; i_b+=st_b[0]; i_c+=st_c[0]; i_d+=st_d[0]; i_e+=st_e[0]; i_f+=st_f[0]; i_g+=st_g[0]; i_h+=st_h[0]; i_i+=st_i[0]; i_j+=st_j[0]; i_k+=st_k[0];  } 
+          if (a_2.checked == true) {all_qc+="<li>"+qc_2+"</li>" ; i_a+=st_a[1]; i_b+=st_b[1]; i_c+=st_c[1]; i_d+=st_d[1]; i_e+=st_e[1]; i_f+=st_f[1]; i_g+=st_g[1]; i_h+=st_h[1]; i_i+=st_i[1]; i_j+=st_j[1]; i_k+=st_k[1];  } 
+          if (a_3.checked == true) {all_qc+="<li>"+qc_3+"</li>" ; i_a+=st_a[2]; i_b+=st_b[2]; i_c+=st_c[2]; i_d+=st_d[2]; i_e+=st_e[2]; i_f+=st_f[2]; i_g+=st_g[2]; i_h+=st_h[2]; i_i+=st_i[2]; i_j+=st_j[2]; i_k+=st_k[2];  } 
+          if (a_4.checked == true) {all_qc+="<li>"+qc_4+"</li>" ; i_a+=st_a[3]; i_b+=st_b[3]; i_c+=st_c[3]; i_d+=st_d[3]; i_e+=st_e[3]; i_f+=st_f[3]; i_g+=st_g[3]; i_h+=st_h[3]; i_i+=st_i[3]; i_j+=st_j[3]; i_k+=st_k[3];  } 
+          if (a_5.checked == true) {all_qc+="<li>"+qc_5+"</li>" ; i_a+=st_a[4]; i_b+=st_b[4]; i_c+=st_c[4]; i_d+=st_d[4]; i_e+=st_e[4]; i_f+=st_f[4]; i_g+=st_g[4]; i_h+=st_h[4]; i_i+=st_i[4]; i_j+=st_j[4]; i_k+=st_k[4];  } 
+          if (a_6.checked == true) {all_qc+="<li>"+qc_6+"</li>" ; i_a+=st_a[5]; i_b+=st_b[5]; i_c+=st_c[5]; i_d+=st_d[5]; i_e+=st_e[5]; i_f+=st_f[5]; i_g+=st_g[5]; i_h+=st_h[5]; i_i+=st_i[5]; i_j+=st_j[5]; i_k+=st_k[5];  } 
+          if (a_7.checked == true) {all_qc+="<li>"+qc_7+"</li>" ; i_a+=st_a[6]; i_b+=st_b[6]; i_c+=st_c[6]; i_d+=st_d[6]; i_e+=st_e[6]; i_f+=st_f[6]; i_g+=st_g[6]; i_h+=st_h[6]; i_i+=st_i[6]; i_j+=st_j[6]; i_k+=st_k[6];  } 
+          if (a_8.checked == true) {all_qc+="<li>"+qc_8+"</li>" ; i_a+=st_a[7]; i_b+=st_b[7]; i_c+=st_c[7]; i_d+=st_d[7]; i_e+=st_e[7]; i_f+=st_f[7]; i_g+=st_g[7]; i_h+=st_h[7]; i_i+=st_i[7]; i_j+=st_j[7]; i_k+=st_k[7];  } 
+          if (a_9.checked == true) {all_qc+="<li>"+qc_9+"</li>" ; i_a+=st_a[8]; i_b+=st_b[8]; i_c+=st_c[8]; i_d+=st_d[8]; i_e+=st_e[8]; i_f+=st_f[8]; i_g+=st_g[8]; i_h+=st_h[8]; i_i+=st_i[8]; i_j+=st_j[8]; i_k+=st_k[8];  } 
+          if (a_10.checked == true) {all_qc+="<li>"+qc_10+"</li>" ; i_a+=st_a[9]; i_b+=st_b[9]; i_c+=st_c[9]; i_d+=st_d[9]; i_e+=st_e[9]; i_f+=st_f[9]; i_g+=st_g[9]; i_h+=st_h[9]; i_i+=st_i[9]; i_j+=st_j[9]; i_k+=st_k[9];  } 
+          if (a_11.checked == true) {all_qc+="<li>"+qc_11+"</li>" ; i_a+=st_a[10]; i_b+=st_b[10]; i_c+=st_c[10]; i_d+=st_d[10]; i_e+=st_e[10]; i_f+=st_f[10]; i_g+=st_g[10]; i_h+=st_h[10]; i_i+=st_i[10]; i_j+=st_j[10]; i_k+=st_k[10];  } 
+          if (a_12.checked == true) {all_qc+="<li>"+qc_12+"</li>" ; i_a+=st_a[11]; i_b+=st_b[11]; i_c+=st_c[11]; i_d+=st_d[11]; i_e+=st_e[11]; i_f+=st_f[11]; i_g+=st_g[11]; i_h+=st_h[11]; i_i+=st_i[11]; i_j+=st_j[11]; i_k+=st_k[11];  } 
+          if (a_13.checked == true) {all_qc+="<li>"+qc_13+"</li>" ; i_a+=st_a[12]; i_b+=st_b[12]; i_c+=st_c[12]; i_d+=st_d[12]; i_e+=st_e[12]; i_f+=st_f[12]; i_g+=st_g[12]; i_h+=st_h[12]; i_i+=st_i[12]; i_j+=st_j[12]; i_k+=st_k[12];  } 
+          if (a_14.checked == true) {all_qc+="<li>"+qc_14+"</li>" ; i_a+=st_a[13]; i_b+=st_b[13]; i_c+=st_c[13]; i_d+=st_d[13]; i_e+=st_e[13]; i_f+=st_f[13]; i_g+=st_g[13]; i_h+=st_h[13]; i_i+=st_i[13]; i_j+=st_j[13]; i_k+=st_k[13];  } 
+          if (a_15.checked == true) {all_qc+="<li>"+qc_15+"</li>" ; i_a+=st_a[14]; i_b+=st_b[14]; i_c+=st_c[14]; i_d+=st_d[14]; i_e+=st_e[14]; i_f+=st_f[14]; i_g+=st_g[14]; i_h+=st_h[14]; i_i+=st_i[14]; i_j+=st_j[14]; i_k+=st_k[14];  } 
+          if (a_16.checked == true) {all_qc+="<li>"+qc_16+"</li>" ; i_a+=st_a[15]; i_b+=st_b[15]; i_c+=st_c[15]; i_d+=st_d[15]; i_e+=st_e[15]; i_f+=st_f[15]; i_g+=st_g[15]; i_h+=st_h[15]; i_i+=st_i[15]; i_j+=st_j[15]; i_k+=st_k[15];  } 
+          if (a_17.checked == true) {all_qc+="<li>"+qc_17+"</li>" ; i_a+=st_a[16]; i_b+=st_b[16]; i_c+=st_c[16]; i_d+=st_d[16]; i_e+=st_e[16]; i_f+=st_f[16]; i_g+=st_g[16]; i_h+=st_h[16]; i_i+=st_i[16]; i_j+=st_j[16]; i_k+=st_k[16];  } 
+          if (a_18.checked == true) {all_qc+="<li>"+qc_18+"</li>" ; i_a+=st_a[17]; i_b+=st_b[17]; i_c+=st_c[17]; i_d+=st_d[17]; i_e+=st_e[17]; i_f+=st_f[17]; i_g+=st_g[17]; i_h+=st_h[17]; i_i+=st_i[17]; i_j+=st_j[17]; i_k+=st_k[17];  } 
+          if (a_19.checked == true) {all_qc+="<li>"+qc_19+"</li>" ; i_a+=st_a[18]; i_b+=st_b[18]; i_c+=st_c[18]; i_d+=st_d[18]; i_e+=st_e[18]; i_f+=st_f[18]; i_g+=st_g[18]; i_h+=st_h[18]; i_i+=st_i[18]; i_j+=st_j[18]; i_k+=st_k[18];  } 
+          if (a_20.checked == true) {all_qc+="<li>"+qc_20+"</li>" ; i_a+=st_a[19]; i_b+=st_b[19]; i_c+=st_c[19]; i_d+=st_d[19]; i_e+=st_e[19]; i_f+=st_f[19]; i_g+=st_g[19]; i_h+=st_h[19]; i_i+=st_i[19]; i_j+=st_j[19]; i_k+=st_k[19];  } 
+          if (a_21.checked == true) {all_qc+="<li>"+qc_21+"</li>" ; i_a+=st_a[20]; i_b+=st_b[20]; i_c+=st_c[20]; i_d+=st_d[20]; i_e+=st_e[20]; i_f+=st_f[20]; i_g+=st_g[20]; i_h+=st_h[20]; i_i+=st_i[20]; i_j+=st_j[20]; i_k+=st_k[20];  } 
+          if (a_22.checked == true) {all_qc+="<li>"+qc_22+"</li>" ; i_a+=st_a[21]; i_b+=st_b[21]; i_c+=st_c[21]; i_d+=st_d[21]; i_e+=st_e[21]; i_f+=st_f[21]; i_g+=st_g[21]; i_h+=st_h[21]; i_i+=st_i[21]; i_j+=st_j[21]; i_k+=st_k[21];  } 
+          if (a_23.checked == true) {all_qc+="<li>"+qc_23+"</li>" ; i_a+=st_a[22]; i_b+=st_b[22]; i_c+=st_c[22]; i_d+=st_d[22]; i_e+=st_e[22]; i_f+=st_f[22]; i_g+=st_g[22]; i_h+=st_h[22]; i_i+=st_i[22]; i_j+=st_j[22]; i_k+=st_k[22];  } 
+          if (a_24.checked == true) {all_qc+="<li>"+qc_24+"</li>" ; i_a+=st_a[23]; i_b+=st_b[23]; i_c+=st_c[23]; i_d+=st_d[23]; i_e+=st_e[23]; i_f+=st_f[23]; i_g+=st_g[23]; i_h+=st_h[23]; i_i+=st_i[23]; i_j+=st_j[23]; i_k+=st_k[23];  } 
+          if (a_25.checked == true) {all_qc+="<li>"+qc_25+"</li>" ; i_a+=st_a[24]; i_b+=st_b[24]; i_c+=st_c[24]; i_d+=st_d[24]; i_e+=st_e[24]; i_f+=st_f[24]; i_g+=st_g[24]; i_h+=st_h[24]; i_i+=st_i[24]; i_j+=st_j[24]; i_k+=st_k[24];  } 
+          if (a_26.checked == true) {all_qc+="<li>"+qc_26+"</li>" ; i_a+=st_a[25]; i_b+=st_b[25]; i_c+=st_c[25]; i_d+=st_d[25]; i_e+=st_e[25]; i_f+=st_f[25]; i_g+=st_g[25]; i_h+=st_h[25]; i_i+=st_i[25]; i_j+=st_j[25]; i_k+=st_k[25];  } 
+          if (a_27.checked == true) {all_qc+="<li>"+qc_27+"</li>" ; i_a+=st_a[26]; i_b+=st_b[26]; i_c+=st_c[26]; i_d+=st_d[26]; i_e+=st_e[26]; i_f+=st_f[26]; i_g+=st_g[26]; i_h+=st_h[26]; i_i+=st_i[26]; i_j+=st_j[26]; i_k+=st_k[26];  } 
+          if (a_28.checked == true) {all_qc+="<li>"+qc_28+"</li>" ; i_a+=st_a[27]; i_b+=st_b[27]; i_c+=st_c[27]; i_d+=st_d[27]; i_e+=st_e[27]; i_f+=st_f[27]; i_g+=st_g[27]; i_h+=st_h[27]; i_i+=st_i[27]; i_j+=st_j[27]; i_k+=st_k[27];  } 
+          if (a_29.checked == true) {all_qc+="<li>"+qc_29+"</li>" ; i_a+=st_a[28]; i_b+=st_b[28]; i_c+=st_c[28]; i_d+=st_d[28]; i_e+=st_e[28]; i_f+=st_f[28]; i_g+=st_g[28]; i_h+=st_h[28]; i_i+=st_i[28]; i_j+=st_j[28]; i_k+=st_k[28];  } 
+          if (a_30.checked == true) {all_qc+="<li>"+qc_30+"</li>" ; i_a+=st_a[29]; i_b+=st_b[29]; i_c+=st_c[29]; i_d+=st_d[29]; i_e+=st_e[29]; i_f+=st_f[29]; i_g+=st_g[29]; i_h+=st_h[29]; i_i+=st_i[29]; i_j+=st_j[29]; i_k+=st_k[29];  } 
+          if (a_31.checked == true) {all_qc+="<li>"+qc_31+"</li>" ; i_a+=st_a[30]; i_b+=st_b[30]; i_c+=st_c[30]; i_d+=st_d[30]; i_e+=st_e[30]; i_f+=st_f[30]; i_g+=st_g[30]; i_h+=st_h[30]; i_i+=st_i[30]; i_j+=st_j[30]; i_k+=st_k[30];  } 
+          if (a_32.checked == true) {all_qc+="<li>"+qc_32+"</li>" ; i_a+=st_a[31]; i_b+=st_b[31]; i_c+=st_c[31]; i_d+=st_d[31]; i_e+=st_e[31]; i_f+=st_f[31]; i_g+=st_g[31]; i_h+=st_h[31]; i_i+=st_i[31]; i_j+=st_j[31]; i_k+=st_k[31];  } 
+          if (a_33.checked == true) {all_qc+="<li>"+qc_33+"</li>" ; i_a+=st_a[32]; i_b+=st_b[32]; i_c+=st_c[32]; i_d+=st_d[32]; i_e+=st_e[32]; i_f+=st_f[32]; i_g+=st_g[32]; i_h+=st_h[32]; i_i+=st_i[32]; i_j+=st_j[32]; i_k+=st_k[32];  } 
+          if (a_34.checked == true) {all_qc+="<li>"+qc_34+"</li>" ; i_a+=st_a[33]; i_b+=st_b[33]; i_c+=st_c[33]; i_d+=st_d[33]; i_e+=st_e[33]; i_f+=st_f[33]; i_g+=st_g[33]; i_h+=st_h[33]; i_i+=st_i[33]; i_j+=st_j[33]; i_k+=st_k[33];  } 
+          if (a_35.checked == true) {all_qc+="<li>"+qc_35+"</li>" ; i_a+=st_a[34]; i_b+=st_b[34]; i_c+=st_c[34]; i_d+=st_d[34]; i_e+=st_e[34]; i_f+=st_f[34]; i_g+=st_g[34]; i_h+=st_h[34]; i_i+=st_i[34]; i_j+=st_j[34]; i_k+=st_k[34];  } 
+          if (a_36.checked == true) {all_qc+="<li>"+qc_36+"</li>" ; i_a+=st_a[35]; i_b+=st_b[35]; i_c+=st_c[35]; i_d+=st_d[35]; i_e+=st_e[35]; i_f+=st_f[35]; i_g+=st_g[35]; i_h+=st_h[35]; i_i+=st_i[35]; i_j+=st_j[35]; i_k+=st_k[35];  } 
+          if (a_37.checked == true) {all_qc+="<li>"+qc_37+"</li>" ; i_a+=st_a[36]; i_b+=st_b[36]; i_c+=st_c[36]; i_d+=st_d[36]; i_e+=st_e[36]; i_f+=st_f[36]; i_g+=st_g[36]; i_h+=st_h[36]; i_i+=st_i[36]; i_j+=st_j[36]; i_k+=st_k[36];  } 
+          if (a_38.checked == true) {all_qc+="<li>"+qc_38+"</li>" ; i_a+=st_a[37]; i_b+=st_b[37]; i_c+=st_c[37]; i_d+=st_d[37]; i_e+=st_e[37]; i_f+=st_f[37]; i_g+=st_g[37]; i_h+=st_h[37]; i_i+=st_i[37]; i_j+=st_j[37]; i_k+=st_k[37];  } 
+          if (a_39.checked == true) {all_qc+="<li>"+qc_39+"</li>" ; i_a+=st_a[38]; i_b+=st_b[38]; i_c+=st_c[38]; i_d+=st_d[38]; i_e+=st_e[38]; i_f+=st_f[38]; i_g+=st_g[38]; i_h+=st_h[38]; i_i+=st_i[38]; i_j+=st_j[38]; i_k+=st_k[38];  } 
+          if (a_40.checked == true) {all_qc+="<li>"+qc_40+"</li>" ; i_a+=st_a[39]; i_b+=st_b[39]; i_c+=st_c[39]; i_d+=st_d[39]; i_e+=st_e[39]; i_f+=st_f[39]; i_g+=st_g[39]; i_h+=st_h[39]; i_i+=st_i[39]; i_j+=st_j[39]; i_k+=st_k[39];  } 
+          if (a_41.checked == true) {all_qc+="<li>"+qc_41+"</li>" ; i_a+=st_a[40]; i_b+=st_b[40]; i_c+=st_c[40]; i_d+=st_d[40]; i_e+=st_e[40]; i_f+=st_f[40]; i_g+=st_g[40]; i_h+=st_h[40]; i_i+=st_i[40]; i_j+=st_j[40]; i_k+=st_k[40];  } 
+          if (a_42.checked == true) {all_qc+="<li>"+qc_42+"</li>" ; i_a+=st_a[41]; i_b+=st_b[41]; i_c+=st_c[41]; i_d+=st_d[41]; i_e+=st_e[41]; i_f+=st_f[41]; i_g+=st_g[41]; i_h+=st_h[41]; i_i+=st_i[41]; i_j+=st_j[41]; i_k+=st_k[41];  } 
+          if (a_43.checked == true) {all_qc+="<li>"+qc_43+"</li>" ; i_a+=st_a[42]; i_b+=st_b[42]; i_c+=st_c[42]; i_d+=st_d[42]; i_e+=st_e[42]; i_f+=st_f[42]; i_g+=st_g[42]; i_h+=st_h[42]; i_i+=st_i[42]; i_j+=st_j[42]; i_k+=st_k[42];  } 
+          if (a_44.checked == true) {all_qc+="<li>"+qc_44+"</li>" ; i_a+=st_a[43]; i_b+=st_b[43]; i_c+=st_c[43]; i_d+=st_d[43]; i_e+=st_e[43]; i_f+=st_f[43]; i_g+=st_g[43]; i_h+=st_h[43]; i_i+=st_i[43]; i_j+=st_j[43]; i_k+=st_k[43];  } 
+          if (a_45.checked == true) {all_qc+="<li>"+qc_45+"</li>" ; i_a+=st_a[44]; i_b+=st_b[44]; i_c+=st_c[44]; i_d+=st_d[44]; i_e+=st_e[44]; i_f+=st_f[44]; i_g+=st_g[44]; i_h+=st_h[44]; i_i+=st_i[44]; i_j+=st_j[44]; i_k+=st_k[44];  } 
+          if (a_46.checked == true) {all_qc+="<li>"+qc_46+"</li>" ; i_a+=st_a[45]; i_b+=st_b[45]; i_c+=st_c[45]; i_d+=st_d[45]; i_e+=st_e[45]; i_f+=st_f[45]; i_g+=st_g[45]; i_h+=st_h[45]; i_i+=st_i[45]; i_j+=st_j[45]; i_k+=st_k[45];  } 
+          if (a_47.checked == true) {all_qc+="<li>"+qc_47+"</li>" ; i_a+=st_a[46]; i_b+=st_b[46]; i_c+=st_c[46]; i_d+=st_d[46]; i_e+=st_e[46]; i_f+=st_f[46]; i_g+=st_g[46]; i_h+=st_h[46]; i_i+=st_i[46]; i_j+=st_j[46]; i_k+=st_k[46];  } 
+          if (a_48.checked == true) {all_qc+="<li>"+qc_48+"</li>" ; i_a+=st_a[47]; i_b+=st_b[47]; i_c+=st_c[47]; i_d+=st_d[47]; i_e+=st_e[47]; i_f+=st_f[47]; i_g+=st_g[47]; i_h+=st_h[47]; i_i+=st_i[47]; i_j+=st_j[47]; i_k+=st_k[47];  } 
+          if (a_49.checked == true) {all_qc+="<li>"+qc_49+"</li>" ; i_a+=st_a[48]; i_b+=st_b[48]; i_c+=st_c[48]; i_d+=st_d[48]; i_e+=st_e[48]; i_f+=st_f[48]; i_g+=st_g[48]; i_h+=st_h[48]; i_i+=st_i[48]; i_j+=st_j[48]; i_k+=st_k[48];  } 
+          if (a_50.checked == true) {all_qc+="<li>"+qc_50+"</li>" ; i_a+=st_a[49]; i_b+=st_b[49]; i_c+=st_c[49]; i_d+=st_d[49]; i_e+=st_e[49]; i_f+=st_f[49]; i_g+=st_g[49]; i_h+=st_h[49]; i_i+=st_i[49]; i_j+=st_j[49]; i_k+=st_k[49];  } 
+          all_qc += "</ul>  "; 
+  localStorage.setItem("bar_a", i_a);
+  localStorage.setItem("bar_b", i_b);
+  localStorage.setItem("bar_c", i_c);
+  localStorage.setItem("bar_d", i_d);
+  localStorage.setItem("bar_e", i_e);
+  localStorage.setItem("bar_f", i_f);
+  localStorage.setItem("bar_g", i_g);
+  localStorage.setItem("bar_h", i_h);
+  localStorage.setItem("bar_i", i_i);
+  localStorage.setItem("bar_j", i_j);
+  localStorage.setItem("bar_k", i_k);
+  localStorage.setItem("bar_allqc", all_qc);
+}
+</script>
+
+</div>
+
+<!-- 
+===========================================================================
+TABS:          tabs-2 : 體質分析
+===========================================================================
+-->
+
+  <div id="tabs-2">
+<!--
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>       
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+ function drawChart(){
+
+      var sp_a = parseInt(localStorage.getItem("bar_a"));
+      var sp_b = parseInt(localStorage.getItem("bar_b"));
+      var sp_c = parseInt(localStorage.getItem("bar_c"));
+      var sp_d = parseInt(localStorage.getItem("bar_d"));
+      var sp_e = parseInt(localStorage.getItem("bar_e"));
+      var sp_f = parseInt(localStorage.getItem("bar_f"));
+      var sp_g = parseInt(localStorage.getItem("bar_g"));
+      var sp_h = parseInt(localStorage.getItem("bar_h"));
+      var sp_i = parseInt(localStorage.getItem("bar_i"));
+      var sp_j = parseInt(localStorage.getItem("bar_j"));
+      var sp_k = parseInt(localStorage.getItem("bar_k"));
+
+
+      var data = google.visualization.arrayToDataTable([ 
+        ["Element", "傾向度", { role: "style" } ], 
+        ["桂枝湯", sp_a, "#FFFFCC"],
+        ["葛根湯", sp_b, "#CCE6FF"],
+        ["小青龍湯", sp_c, "#FF7142"],
+        ["小柴胡湯", sp_d, "#FF4405"],
+        ["五苓散", sp_e, "#00B359"],
+        ["平胃散", sp_f, "#FF2E2E"],
+        ["葛苓連湯", sp_g, "#5900B3"],
+        ["小建中湯", sp_h, "#FFFF29"],
+        ["芍藥甘草湯", sp_i, "#88DDCC"],
+        ["麥門冬湯", sp_j, "#99E6DD"],
+        ["苓桂朮甘湯", sp_k, "#FFFFCC"],
+      ]);      var view = new google.visualization.DataView(data); 
+      view.setColumns([0, 1, 
+                       { calc: "stringify", 
+                         sourceColumn: 1, 
+                         type: "string", 
+                         role: "annotation" }, 
+                       2]); 
+ 
+      var options = { 
+        title: "電腦分析結果一覽", 
+        width: 800, 
+        height: 600, 
+        bar: {groupWidth: "60%"}, 
+        legend: { position: "none" }, 
+        hAxis : {  
+            textStyle : { 
+                fontSize: 7 // or the number you want 
+            } 
+         } 
+      }; 
+      var chart = new google.visualization.BarChart(document.getElementById("columnchart_values")); 
+      chart.draw(view, options);   
+ 
+ } 
+</script>               
+</head> 
+ 
+    <div id="mouseoverdiv"></div> 
+    <div id="columnchart_values" style="width: 500px; height: 200px;"></div> 
+ 
+        <button onclick="drawChart()">開始計算</button> 
+-->
+
+<script src="Chart.js"></script>
+<!--<script>
+    var myChart = new Chart(ctx, {...});
+</script>
+-->
+<canvas id="myChart" width="100" height="100"></canvas>
+<script> 
+var ctx = document.getElementById('myChart');
+var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = $('#myChart');
+var ctx = "myChart";
+
+      var sp_a = parseInt(localStorage.getItem("bar_a"));
+      var sp_b = parseInt(localStorage.getItem("bar_b"));
+      var sp_c = parseInt(localStorage.getItem("bar_c"));
+      var sp_d = parseInt(localStorage.getItem("bar_d"));
+      var sp_e = parseInt(localStorage.getItem("bar_e"));
+      var sp_f = parseInt(localStorage.getItem("bar_f"));
+      var sp_g = parseInt(localStorage.getItem("bar_g"));
+      var sp_h = parseInt(localStorage.getItem("bar_h"));
+      var sp_i = parseInt(localStorage.getItem("bar_i"));
+      var sp_j = parseInt(localStorage.getItem("bar_j"));
+      var sp_k = parseInt(localStorage.getItem("bar_k"));
+
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+    labels: ['桂枝湯', '葛根湯', '小青龍湯', '小柴胡湯', '五苓散', '平胃散', '葛苓連湯', '小建中湯', '芍藥甘草湯','麥門冬湯', '苓桂朮甘湯'],
+    datasets: [{
+      backgroundColor: [
+        'rgba(102, 255, 102, 0.3)',
+        'rgba(102, 204, 255, 0.3)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(51, 153, 51, 0.2)',
+        'rgba(255, 102, 0, 0.2)',
+        'rgba(0, 153, 255, 0.2)',
+        'rgba(255, 255, 0, 0.2)',
+        'rgba(255, 51, 0, 0.2)',
+        'rgba(0, 204, 153, 0.2)'
+      ],
+      borderColor: [
+        'rgba(102, 255, 102, 1)',
+        'rgba(102, 204, 255, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(51, 153, 51, 1)',
+        'rgba(255, 102, 0, 1)',
+        'rgba(0, 153, 255, 1)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(255, 51, 0, 1)',
+        'rgba(0, 204, 153, 1)'
+      ],
+      borderWidth: 1,
+      label: '方劑適用程度',
+      data: [sp_a, sp_b, sp_c, sp_d, sp_e, sp_f, sp_g, sp_h, sp_i, sp_j, sp_k]
+    }]
+  }
+});
+
+
+</script>               
+        
+  </div> 
+  
+ 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-3 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-3"> 
+ 
+       <div id="allqc"></div> 
+       <script> 
+        var all_qc = localStorage.getItem("bar_allqc"); 
+        document.getElementById("allqc").innerHTML = all_qc; 
+       </script> 
+        
+        
+</div> 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-4 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-4"> 
+   <div> 
+      <span><button onclick="putNote('note/formula_1.html')">桂枝湯</button></span>
+       <span><button onclick="putNote('note/formula_3.html')">葛根湯</button></span>
+       <span><button onclick="putNote('note/formula_156.html')">小青龍湯</button></span>
+       <span><button onclick="putNote('note/formula_170.html')">小柴胡湯</button></span>
+       <span><button onclick="putNote('note/formula_22.html')">五苓散</button></span>
+       <span><button onclick="putNote('note/formula_45.html')">平胃散</button></span>
+       <span><button onclick="putNote('note/formula_165.html')">葛苓連湯</button></span>
+       <span><button onclick="putNote('note/formula_15.html')">小建中湯</button></span>
+       <span><button onclick="putNote('note/formula_176.html')">芍藥甘草湯</button></span>
+       <span><button onclick="putNote('note/formula_40.html')">麥門冬湯</button></span>
+       <span><button onclick="putNote('note/formula_6.html')">苓桂朮甘湯</button></span>
+  
+  </div> 
+
+  <div id="noteNow"></div> 
+
+  <script>        
+          
+           function putNote(index)
+           {
+                    var content = index;
+                    document.getElementById("noteNow").innerHTML = '<object width="900" height="900" type="text/html" data='+content+'></object>';
+           }
+  </script>        
+
+</div> 
+
+<!--  
+=========================================================================== 
+TABS:          tabs-5 : 
+=========================================================================== 
+--> 
+ 
+<div id="tabs-5"> 
+   <div> 
+<p style="margin: 0px; font-size: 16px; font-family: Menlo;">
+
++-- 周邊的人開始感冒<br>| +-- 平常就很容昜感冒<br>| | +-- 覺得自己感冒了<br>| | | +-- 還有一點汗的感冒<br>| | | | +-- 無汗、身痛的感冒<br>| | | | | +-- 感冒兩三天而有清鼻涕、清痰<br>| | | | | | +-- 感冒中間期<br>| | | | | | | +-- 發燒<br>| | | | | | | | +-- 發燒時好時壞(往來寒熱)<br>| | | | | | | | | +-- 女子月經期間<br>| | | | | | | | | | +-- 腸胃型感冒<br>| | | | | | | | | | | +-- 腹瀉:拉肚子水瀉(腹痛不甚)<br>| | | | | | | | | | | | +-- 腹瀉:拉肚子水瀉(熱、臭、腹痛)<br>| | | | | | | | | | | | | +-- 清鼻水仍有<br>| | | | | | | | | | | | | | +-- 咳嗽仍有<br>| | | | | | | | | | | | | | | +-- 身體虛弱<br>| | | | | | | | | | | | | | | | +-- 肚子不舒服<br>| | | | | | | | | | | | | | | | | +-- 莫名還會發燒<br>| | | | | | | | | | | | | | | | | | +-- 一受冷或吹風就咳<br>| | | | | | | | | | | | | | | | | | | +-- 多痰的咳<br>| | | | | | | | | | | | | | | | | | | | +-- 乾咳<br>| | | | | | | | | | | | | | | | | | | | | +-- 少痰或黏稠痰的咳<br>| | | | | | | | | | | | | | | | | | | | | | +-- 青白色痰、鼻涕<br>| | | | | | | | | | | | | | | | | | | | | | | +-- 寒喘<br>| | | | | | | | | | | | | | | | | | | | | | | | +-- 脹氣<br>| | | | | | | | | | | | | | | | | | | | | | | | | +-- 消化不良<br>| | | | | | | | | | | | | | | | | | | | | | | | | | +-- 吃壞肚子<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 肌肉酸痛緊繃<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 口苦<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 咽喉乾<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 咽喉痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 說話太多、沙啞<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 目眩<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 眼壓過高<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 暈車<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 暈眩<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 心煩<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 胸脅悶痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 食慾不振<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 嘔吐、水逆<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 欲嘔吐、噁心<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 眼睛不舒服<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 耳朵不舒服<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 咽喉不舒服<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 耳嗚初起<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 腹痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 經痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 欲止痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 小腿抽筋<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 靜脈曲張<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | <br>1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 桂枝湯<br>0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 葛根湯<br>0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 小青龍湯<br>0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 0 0 0 小柴胡湯<br>0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 五苓散<br>0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 平胃散<br>0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 葛苓連湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 小建中湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 芍藥甘草湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 麥門冬湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 苓桂朮甘湯<br></p> 
+</div> 
+
+</body> 
+</html> 
+
