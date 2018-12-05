@@ -3,26 +3,28 @@
 <head> 
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <title>居家日用方劑整理</title> 
+  <title>上醫堂診斷輔助程式程式</title> 
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
   <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"> 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
   <script> 
-
-  var  all_qc = "有特出的症狀: <br><ul>  ";
-
   $( function() { 
     $( "#tabs" ).tabs(); 
   } ); 
   </script> 
+  <style>
+    img {
+       max-width: 100%;
+       height: auto;
+    }
+  </style>
 </head> 
 <body> 
 
-         <img src="tcmHomeUse_title.gif" height="150" width="500"> 
+         <img src="tcmHomeUse_title.gif" height="218" width="800"> 
           <table border="0" cellpadding="1" cellspacing="1" style="width: 600px"> 
          <tr><td><h3>目前查詢主症: 居家日用方劑整理</h2></td> 
-<!--         <td><button align="left" onclick="location.href='tcmTool.html'" type="button"><h2>回首頁</h2></button></td></tr> -->
          </table> 
          
          <!--<p>數位人生哲學起課程式</p>--> 
@@ -33,7 +35,6 @@
     <li><a href="#tabs-2">方劑分析</a></li> 
     <li><a href="#tabs-3">特出項目</a></li> 
     <li><a href="#tabs-4">方劑說明</a></li> 
-<!--    <li><a href="#tabs-5">思惟矩陣</a></li> -->
   </ul> 
 <!--  
 =========================================================================== 
@@ -50,7 +51,7 @@ TABS:          tabs-1 : 問診
        <table border="0" cellpadding="1" cellspacing="1" style="width: 360px"> 
        <tbody> 
 
-<tr bgcolor = "yellow"><td><label><b>感冒過程</b></label></td> 
+ 
 <tr bgcolor = "#ffffff"><td><label>1. 周邊的人開始感冒<input type="checkbox" id="symp_Check_1"></label></td>
 <tr bgcolor = "#eeffee"><td><label>2. 平常就很容昜感冒<input type="checkbox" id="symp_Check_2"></label></td>
 <tr bgcolor = "#ffffff"><td><label>3. 覺得自己感冒了<input type="checkbox" id="symp_Check_3"></label></td>
@@ -64,20 +65,17 @@ TABS:          tabs-1 : 問診
 <tr bgcolor = "#ffffff"><td><label>11. 腸胃型感冒<input type="checkbox" id="symp_Check_11"></label></td>
 <tr bgcolor = "#eeffee"><td><label>12. 腹瀉:拉肚子水瀉(腹痛不甚)<input type="checkbox" id="symp_Check_12"></label></td>
 <tr bgcolor = "#ffffff"><td><label>13. 腹瀉:拉肚子水瀉(熱、臭、腹痛)<input type="checkbox" id="symp_Check_13"></label></td>
-<tr bgcolor = "yellow"><td><label><b>感冒癒後</b></label></td> 
 <tr bgcolor = "#eeffee"><td><label>14. 清鼻水仍有<input type="checkbox" id="symp_Check_14"></label></td>
 <tr bgcolor = "#ffffff"><td><label>15. 咳嗽仍有<input type="checkbox" id="symp_Check_15"></label></td>
 <tr bgcolor = "#eeffee"><td><label>16. 身體虛弱<input type="checkbox" id="symp_Check_16"></label></td>
 <tr bgcolor = "#ffffff"><td><label>17. 肚子不舒服<input type="checkbox" id="symp_Check_17"></label></td>
 <tr bgcolor = "#eeffee"><td><label>18. 莫名還會發燒<input type="checkbox" id="symp_Check_18"></label></td>
-<tr bgcolor = "yellow"><td><label><b>咳嗽_喘_痰</b></label></td> 
 <tr bgcolor = "#ffffff"><td><label>19. 一受冷或吹風就咳<input type="checkbox" id="symp_Check_19"></label></td>
 <tr bgcolor = "#eeffee"><td><label>20. 多痰的咳<input type="checkbox" id="symp_Check_20"></label></td>
 <tr bgcolor = "#ffffff"><td><label>21. 乾咳<input type="checkbox" id="symp_Check_21"></label></td>
 <tr bgcolor = "#eeffee"><td><label>22. 少痰或黏稠痰的咳<input type="checkbox" id="symp_Check_22"></label></td>
 <tr bgcolor = "#ffffff"><td><label>23. 青白色痰、鼻涕<input type="checkbox" id="symp_Check_23"></label></td>
 <tr bgcolor = "#eeffee"><td><label>24. 寒喘<input type="checkbox" id="symp_Check_24"></label></td>
-<tr bgcolor = "yellow"><td><label><b>日常不適症狀</b></label></td> 
 <tr bgcolor = "#ffffff"><td><label>25. 脹氣<input type="checkbox" id="symp_Check_25"></label></td>
 <tr bgcolor = "#eeffee"><td><label>26. 消化不良<input type="checkbox" id="symp_Check_26"></label></td>
 <tr bgcolor = "#ffffff"><td><label>27. 吃壞肚子<input type="checkbox" id="symp_Check_27"></label></td>
@@ -166,7 +164,7 @@ TABS:          tabs-1 : 問診
             var qc_48  = "欲止痛";
             var qc_49  = "小腿抽筋";
             var qc_50  = "靜脈曲張";
-            all_qc = "有特出的症狀: <br><ul>  ";
+            var all_qc = "有特出的症狀: <br><ul>  ";
           var a_1;
           var a_2;
           var a_3;
@@ -366,6 +364,7 @@ TABS:          tabs-2 : 體質分析
 -->
 
   <div id="tabs-2">
+<!--
 <head>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>       
@@ -410,7 +409,7 @@ TABS:          tabs-2 : 體質分析
  
       var options = { 
         title: "電腦分析結果一覽", 
-        width: 400, 
+        width: 800, 
         height: 600, 
         bar: {groupWidth: "60%"}, 
         legend: { position: "none" }, 
@@ -431,7 +430,74 @@ TABS:          tabs-2 : 體質分析
     <div id="columnchart_values" style="width: 500px; height: 200px;"></div> 
  
         <button onclick="drawChart()">開始計算</button> 
- 
+-->
+
+<script src="https://cdn.bootcss.com/Chart.js/2.4.0/Chart.bundle.js"></script>
+<!--<script>
+    var myChart = new Chart(ctx, {...});
+</script>
+-->
+<canvas id="myChart" width="100" height="100"></canvas>
+<script> 
+var ctx = document.getElementById('myChart');
+var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = $('#myChart');
+var ctx = "myChart";
+
+      var sp_a = parseInt(localStorage.getItem("bar_a"));
+      var sp_b = parseInt(localStorage.getItem("bar_b"));
+      var sp_c = parseInt(localStorage.getItem("bar_c"));
+      var sp_d = parseInt(localStorage.getItem("bar_d"));
+      var sp_e = parseInt(localStorage.getItem("bar_e"));
+      var sp_f = parseInt(localStorage.getItem("bar_f"));
+      var sp_g = parseInt(localStorage.getItem("bar_g"));
+      var sp_h = parseInt(localStorage.getItem("bar_h"));
+      var sp_i = parseInt(localStorage.getItem("bar_i"));
+      var sp_j = parseInt(localStorage.getItem("bar_j"));
+      var sp_k = parseInt(localStorage.getItem("bar_k"));
+
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+    labels: ['桂枝湯', '葛根湯', '小青龍湯', '小柴胡湯', '五苓散', '平胃散', '葛苓連湯', '小建中湯', '芍藥甘草湯','麥門冬湯', '苓桂朮甘湯'],
+    datasets: [{
+      backgroundColor: [
+        'rgba(102, 255, 102, 0.3)',
+        'rgba(102, 204, 255, 0.3)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(51, 153, 51, 0.2)',
+        'rgba(255, 102, 0, 0.2)',
+        'rgba(0, 153, 255, 0.2)',
+        'rgba(255, 255, 0, 0.2)',
+        'rgba(255, 51, 0, 0.2)',
+        'rgba(0, 204, 153, 0.2)'
+      ],
+      borderColor: [
+        'rgba(102, 255, 102, 1)',
+        'rgba(102, 204, 255, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(51, 153, 51, 1)',
+        'rgba(255, 102, 0, 1)',
+        'rgba(0, 153, 255, 1)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(255, 51, 0, 1)',
+        'rgba(0, 204, 153, 1)'
+      ],
+      borderWidth: 1,
+      label: '方劑適用程度',
+      data: [sp_a, sp_b, sp_c, sp_d, sp_e, sp_f, sp_g, sp_h, sp_i, sp_j, sp_k]
+    }]
+  }
+});
+
+
+</script>               
         
   </div> 
   
@@ -462,17 +528,17 @@ TABS:          tabs-4 :
  
 <div id="tabs-4"> 
    <div> 
-      <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_1.html')">桂枝湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_3.html')">葛根湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_156.html')">小青龍湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_170.html')">小柴胡湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_22.html')">五苓散</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_45.html')">平胃散</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_165.html')">葛苓連湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_15.html')">小建中湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_176.html')">芍藥甘草湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_40.html')">麥門冬湯</button></span>
-       <span><button onclick="putNote('https://awan168.github.io/tcmTool/note/formula_6.html')">苓桂朮甘湯</button></span>
+      <span><button onclick="putNote('note/formula_1.html')">桂枝湯</button></span>
+       <span><button onclick="putNote('note/formula_3.html')">葛根湯</button></span>
+       <span><button onclick="putNote('note/formula_156.html')">小青龍湯</button></span>
+       <span><button onclick="putNote('note/formula_170.html')">小柴胡湯</button></span>
+       <span><button onclick="putNote('note/formula_22.html')">五苓散</button></span>
+       <span><button onclick="putNote('note/formula_45.html')">平胃散</button></span>
+       <span><button onclick="putNote('note/formula_165.html')">葛苓連湯</button></span>
+       <span><button onclick="putNote('note/formula_15.html')">小建中湯</button></span>
+       <span><button onclick="putNote('note/formula_176.html')">芍藥甘草湯</button></span>
+       <span><button onclick="putNote('note/formula_40.html')">麥門冬湯</button></span>
+       <span><button onclick="putNote('note/formula_6.html')">苓桂朮甘湯</button></span>
   
   </div> 
 
@@ -489,24 +555,6 @@ TABS:          tabs-4 :
 
 </div> 
 
-<!--  
-=========================================================================== 
-TABS:          tabs-5 : 
-=========================================================================== 
-
- 
-<div id="tabs-5"> 
-   <div> 
-         
-
-
-
-<p style="margin: 0px; font-size: 16px; font-family: Menlo;">
-
-+-- 周邊的人開始感冒<br>| +-- 平常就很容昜感冒<br>| | +-- 覺得自己感冒了<br>| | | +-- 還有一點汗的感冒<br>| | | | +-- 無汗、身痛的感冒<br>| | | | | +-- 感冒兩三天而有清鼻涕、清痰<br>| | | | | | +-- 感冒中間期<br>| | | | | | | +-- 發燒<br>| | | | | | | | +-- 發燒時好時壞(往來寒熱)<br>| | | | | | | | | +-- 女子月經期間<br>| | | | | | | | | | +-- 腸胃型感冒<br>| | | | | | | | | | | +-- 腹瀉:拉肚子水瀉(腹痛不甚)<br>| | | | | | | | | | | | +-- 腹瀉:拉肚子水瀉(熱、臭、腹痛)<br>| | | | | | | | | | | | | +-- 清鼻水仍有<br>| | | | | | | | | | | | | | +-- 咳嗽仍有<br>| | | | | | | | | | | | | | | +-- 身體虛弱<br>| | | | | | | | | | | | | | | | +-- 肚子不舒服<br>| | | | | | | | | | | | | | | | | +-- 莫名還會發燒<br>| | | | | | | | | | | | | | | | | | +-- 一受冷或吹風就咳<br>| | | | | | | | | | | | | | | | | | | +-- 多痰的咳<br>| | | | | | | | | | | | | | | | | | | | +-- 乾咳<br>| | | | | | | | | | | | | | | | | | | | | +-- 少痰或黏稠痰的咳<br>| | | | | | | | | | | | | | | | | | | | | | +-- 青白色痰、鼻涕<br>| | | | | | | | | | | | | | | | | | | | | | | +-- 寒喘<br>| | | | | | | | | | | | | | | | | | | | | | | | +-- 脹氣<br>| | | | | | | | | | | | | | | | | | | | | | | | | +-- 消化不良<br>| | | | | | | | | | | | | | | | | | | | | | | | | | +-- 吃壞肚子<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 肌肉酸痛緊繃<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 口苦<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 咽喉乾<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 咽喉痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 說話太多、沙啞<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 目眩<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 眼壓過高<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 暈車<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 暈眩<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 心煩<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 胸脅悶痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 食慾不振<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 嘔吐、水逆<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 欲嘔吐、噁心<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 眼睛不舒服<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 耳朵不舒服<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 咽喉不舒服<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 耳嗚初起<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 腹痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 經痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 欲止痛<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 小腿抽筋<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | +-- 靜脈曲張<br>| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | <br>1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 桂枝湯<br>0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 葛根湯<br>0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 小青龍湯<br>0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 0 0 0 小柴胡湯<br>0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 五苓散<br>0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 平胃散<br>0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 葛苓連湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 小建中湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 芍藥甘草湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 麥門冬湯<br>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 苓桂朮甘湯<br></p> 
-
-   </div> 
---> 
 
 </body> 
 </html> 
