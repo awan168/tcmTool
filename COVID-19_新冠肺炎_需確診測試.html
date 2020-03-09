@@ -1,0 +1,278 @@
+ 
+<!doctype html>  
+<html>  
+<head>  
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>上醫堂診斷輔助程式程式</title>  
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+  <script>  
+            var resultText = "程式推薦方劑:<br>" 
+  </script>  
+ 
+  <script>  
+  $( function() {  
+    $( "#tabs" ).tabs();  
+  } );  
+
+  var score = 0;
+
+
+  </script>  
+<style> 
+div.fixed { 
+    position: fixed; 
+    background-color: #e4ffcc; 
+    border: 1px solid #73AD21; 
+} 
+</style> 
+      <style> 
+      * { 
+        box-sizing: border-box; 
+      } 
+       
+      /* Create three unequal columns that floats next to each other */ 
+      .column { 
+        float: left; 
+        padding: 10px; 
+        /*height: 300px;  Should be removed. Only for demonstration */ 
+      } 
+       
+      .left { 
+        width: 20%; 
+      } 
+       
+      .right { 
+        width: 5%; 
+      } 
+       
+      .middle { 
+        width: 75%; 
+      } 
+       
+      /* Clear floats after the columns */ 
+      .row:after { 
+        content: ""; 
+        display: table; 
+        clear: both; 
+      } 
+      </style> 
+ 
+</head>  
+<body>  
+ 
+         <!--<img src="tcmTool_title.gif" height="218" width="800"> ---> 
+          <table border="0" cellpadding="1" cellspacing="1" style="width: 600px">  
+         <tr><td><h3>COVID-19(武漢肺炎)測試</h2></td>  
+         <td><img src="tcmTool.png" height="90" width="300"> </td>  
+         <td><button align="left" onclick="location.href='tcmTool.html'" type="button"><h2>回首頁</h2></button></td></tr>  
+         </table>           
+ 
+    <div class="row"> 
+  <div class="column left" style="background-color:#ffffff;"> 
+  <p id="display"></p> 
+  </div>
+ 
+<div class="column middle" style="background-color:#ffffff;"> 
+ 
+<!---    <form name="form_name" id="form_name"> ---> 
+        <!--radio用法--> 
+ 
+       <table border="0" cellpadding="1" cellspacing="1" style="width: 360px"> 
+       <tbody> 
+ 
+        <button onclick="getValue()">開始計算</button> 
+<tr bgcolor = "#ffffff"><td colspan="2"><label><span style="background-color: #66ffcc">下呼吸道症狀</span></label></td>
+<tr bgcolor = "#ffffff"><td><label>1. 咳嗽<input type="checkbox" id="symp_Check_1"></label></td>
+<tr bgcolor = "#eeffee"><td><label>2. 呼吸急促<input type="checkbox" id="symp_Check_2"></label></td>
+<tr bgcolor = "#ffffff"><td colspan="2"><label><span style="background-color: #66ffcc">現有疾病</span></label></td>
+<tr bgcolor = "#ffffff"><td><label>3. 糖尿病<input type="checkbox" id="symp_Check_3"></label></td>
+<tr bgcolor = "#eeffee"><td><label>4. 高血壓<input type="checkbox" id="symp_Check_4"></label></td>
+<tr bgcolor = "#ffffff"><td><label>5. 冠心病<input type="checkbox" id="symp_Check_5"></label></td>
+<tr bgcolor = "#ffffff"><td colspan="2"><label><span style="background-color: #66ffcc">上呼吸道症狀</span></label></td>
+<tr bgcolor = "#eeffee"><td><label>6. 鼻塞<input type="checkbox" id="symp_Check_6"></label></td>
+<tr bgcolor = "#ffffff"><td><label>7. 喉嚨痛<input type="checkbox" id="symp_Check_7"></label></td>
+<tr bgcolor = "#ffffff"><td colspan="2"><label><span style="background-color: #66ffcc">全身性症狀</span></label></td>
+<tr bgcolor = "#eeffee"><td><label>8. 頭痛<input type="checkbox" id="symp_Check_8"></label></td>
+<tr bgcolor = "#ffffff"><td><label>9. 肌肉酸痛<input type="checkbox" id="symp_Check_9"></label></td>
+<tr bgcolor = "#eeffee"><td><label>10. 疲勞倦怠<input type="checkbox" id="symp_Check_10"></label></td>
+ </tbody> 
+       </table>
+
+        <button onclick="getValue()">開始計算</button>
+    </form>
+</div>
+       
+<script>
+ function getValue(){
+            //  讀取radio的值
+            var form = document.getElementById("form_name");
+            resultText = "程式推薦方劑:<br>" 
+ 
+            var qc_1  = "咳嗽";
+            var qc_2  = "呼吸急促";
+            var qc_3  = "月經不調";
+            var qc_4  = "右下腹壓痛";
+            var qc_5  = "體力好";
+            var qc_6  = "腳冷";
+            var qc_7  = "潮紅";
+            var qc_8  = "面色紅";
+            var qc_9  = "面色暗";
+            var qc_10  = "易怒_生氣";
+            var qc_11  = "習慣性流產";
+            var qc_12  = "血瘀";
+            var qc_13  = "小腹壓痛";
+            var qc_14  = "肩膀痠痛";
+            var qc_15  = "身冷";
+            var qc_16  = "面色差_氣色差";
+            var qc_17  = "心悸";
+            var qc_18  = "眩暈";
+            var qc_19  = "腹部鬆弛軟";
+            var qc_20  = "腰冷";
+            var qc_21  = "失眠";
+            var qc_22  = "皮膚粗糙";
+            var qc_23  = "肚子痛";
+            var qc_24  = "手熱";
+            var qc_25  = "體力差_體質虛弱";
+            var qc_26  = "腸胃虛弱_元氣衰消化吸收差";
+            var qc_27  = "腹部堅硬突出";
+            var qc_28  = "下利_腹瀉_水瀉";
+            var qc_29  = "胃中振水聲";
+            var qc_30  = "胃下垂";
+            var qc_31  = "貧血";
+            var all_qc = "有特出的症狀: <br><ul>  ";
+          var a_1;
+          var a_2;
+          var a_3;
+          var a_4;
+          var a_5;
+          var a_6;
+          var a_7;
+          var a_8;
+          var a_9;
+          var a_10;
+          var a_11;
+          var a_12;
+          var a_13;
+          var a_14;
+          var a_15;
+          var a_16;
+          var a_17;
+          var a_18;
+          var a_19;
+          var a_20;
+          var a_21;
+          var a_22;
+          var a_23;
+          var a_24;
+          var a_25;
+          var a_26;
+          var a_27;
+          var a_28;
+          var a_29;
+          var a_30;
+          var a_31;
+     a_1 = document.getElementById("symp_Check_1");
+     a_2 = document.getElementById("symp_Check_2");
+     a_3 = document.getElementById("symp_Check_3");
+     a_4 = document.getElementById("symp_Check_4");
+     a_5 = document.getElementById("symp_Check_5");
+     a_6 = document.getElementById("symp_Check_6");
+     a_7 = document.getElementById("symp_Check_7");
+     a_8 = document.getElementById("symp_Check_8");
+     a_9 = document.getElementById("symp_Check_9");
+     a_10 = document.getElementById("symp_Check_10");
+     a_11 = document.getElementById("symp_Check_11");
+     a_12 = document.getElementById("symp_Check_12");
+     a_13 = document.getElementById("symp_Check_13");
+     a_14 = document.getElementById("symp_Check_14");
+     a_15 = document.getElementById("symp_Check_15");
+     a_16 = document.getElementById("symp_Check_16");
+     a_17 = document.getElementById("symp_Check_17");
+     a_18 = document.getElementById("symp_Check_18");
+     a_19 = document.getElementById("symp_Check_19");
+     a_20 = document.getElementById("symp_Check_20");
+     a_21 = document.getElementById("symp_Check_21");
+     a_22 = document.getElementById("symp_Check_22");
+     a_23 = document.getElementById("symp_Check_23");
+     a_24 = document.getElementById("symp_Check_24");
+     a_25 = document.getElementById("symp_Check_25");
+     a_26 = document.getElementById("symp_Check_26");
+     a_27 = document.getElementById("symp_Check_27");
+     a_28 = document.getElementById("symp_Check_28");
+     a_29 = document.getElementById("symp_Check_29");
+     a_30 = document.getElementById("symp_Check_30");
+     a_31 = document.getElementById("symp_Check_31");
+          var st_a = [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
+          var st_b = [1,0,1,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
+          var st_c = [1,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
+          var st_d = [1,0,1,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,]
+          var st_e = [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,]
+          var st_f = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,]
+          var st_g = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,1,1,]
+
+          var i_a =0;
+          var i_b =0;
+          var i_c =0;
+          var i_d =0;
+          var i_e =0;
+          var i_f =0;
+          var i_g =0;
+
+          score = 0;
+
+          if (a_1.checked == true) {all_qc+="<li>"+qc_1+"</li>" ; score =score+8;}
+          if (a_2.checked == true) {all_qc+="<li>"+qc_2+"</li>" ; score =score+17;} 
+          if (a_3.checked == true) {all_qc+="<li>"+qc_3+"</li>" ; score =score+10;} 
+          if (a_4.checked == true) {all_qc+="<li>"+qc_4+"</li>" ; score =score+10;} 
+          if (a_5.checked == true) {all_qc+="<li>"+qc_5+"</li>" ; score =score+5;} 
+          if (a_6.checked == true) {all_qc+="<li>"+qc_6+"</li>" ; score =score-10;} 
+          if (a_7.checked == true) {all_qc+="<li>"+qc_7+"</li>" ; score =score-15;} 
+          if (a_8.checked == true) {all_qc+="<li>"+qc_8+"</li>" ; score =score-10;} 
+          if (a_9.checked == true) {all_qc+="<li>"+qc_9+"</li>" ; score =score-10;} 
+          if (a_10.checked == true) {all_qc+="<li>"+qc_10+"</li>" ;  score =score-5;} 
+          all_qc += "</ul>  "; 
+
+  textNow = "目前計算之積分:"+score+"<br><br>";
+  if (score > 39) {
+      textNow += "<font color=\"red\"><b>建議接受COVID-19 測試!!!</b></font>";
+  }
+  else if (score > 29) {
+      textNow += "<font color=\"blue\"><b>建議暫不用接受COVID-19 測試，但風險甚高</b></font>";
+  }
+  else {
+      textNow += "<font color=\"green\"><b>目前應不用接受COVID-19 測試</b></font>";
+  }
+ 
+  document.getElementById("display").innerHTML = textNow;           
+  
+} 
+</script> 
+  <div class="column right" style="background-color:#ffffff;"> 
+     <div> 
+
+  </div> 
+ 
+  <div id="noteNow"></div> 
+ 
+  <script> 
+ 
+           function putNote(index) 
+           { 
+                    var content = "./notes_html/"+index; 
+                    document.getElementById("noteNow").innerHTML = '<object width="100%" height="900" type="text/html" data='+content+'></object>'; 
+           } 
+  </script> 
+</div> 
+ 
+ 
+<div class="row"> 
+ 
+</div> 
+
+</body> 
+</html> 
+
