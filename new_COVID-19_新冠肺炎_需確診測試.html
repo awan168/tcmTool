@@ -16,12 +16,20 @@ body {
 /* Style the header */
 header {
   background-color: #006600;
-  padding: 30px;
+  width: 100%
   text-align: left;
-  font-size: 20px;
+  font-size: 14px;
   color: white;
 }
 
+resultArea {
+  padding: 60px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}
+
+<!---
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
@@ -36,9 +44,10 @@ nav ul {
   list-style-type: none;
   padding: 0;
 }
+--->
 
 article {
-  float: left;
+<!---  float: left; --->
   padding: 20px;
   width: 70%;
   background-color: #f1f1f1;
@@ -55,14 +64,16 @@ section:after {
 /* Style the footer */
 footer {
   background-color: #006600;
-  padding: 10px;
+  padding: 3px;
   text-align: center;
+  font-size: 9px;
   color: white;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  nav, article {
+<!---  nav,article { --->
+  article { 
     width: 100%;
     height: auto;
   }
@@ -75,7 +86,7 @@ footer {
   <h2>
           <table border="0" cellpadding="1" cellspacing="1" style="width: 600px">  
          <tr><td><img src="tcmTool.png" height="90" width="300"> </td></tr>
-         <tr><td><h5>COVID-19(武漢肺炎)測試</h5></td></tr>  
+         <tr><td>COVID-19(武漢肺炎)測試</td></tr>  
          <!--- <td><button align="left" onclick="location.href='tcmTool.html'" type="button"><h2>回首頁</h2></button></td></tr>  --->
          </table>           
 
@@ -83,17 +94,19 @@ footer {
 </header>
 
 <section>
-  <nav>
-   <div id="display"></div>  
-  <script> 
-           function putNote(index) 
-           { 
-                    var content = "./notes_html/"+index; 
-                    document.getElementById("noteNow").innerHTML = '<object width="100%" height="900" type="text/html" data='+content+'></object>'; 
-           } 
-  </script> 
-  </nav>
-  
+    <resultArea>
+       <div id="display"></div>  
+      <script> 
+               function putNote(index) 
+               { 
+                        var content = "./notes_html/"+index; 
+                        document.getElementById("noteNow").innerHTML = '<object width="100%" height="900" type="text/html" data='+content+'></object>'; 
+               } 
+      </script> 
+    
+    </resultArea>
+
+
   <article>
        <table border="0" cellpadding="1" cellspacing="1" style="width: 360px"> 
        <tbody> 
@@ -250,7 +263,7 @@ footer {
           if (a_10.checked == true) {all_qc+="<li>"+qc_10+"</li>" ;  score =score-5;} 
           all_qc += "</ul>  "; 
 
-  textNow = "目前計算之積分:"+score+"<br><br>";
+  textNow = "<font color=\"black\"><b>目前計算之積分:</b></font>"+score+"<br><br>";
   if (score > 39) {
       textNow += "<font color=\"red\"><b>建議接受COVID-19 測試!!!</b></font>";
   }
